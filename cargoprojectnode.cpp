@@ -1,5 +1,8 @@
 #include "cargoprojectnode.h"
 
+// `projectFilePath` is the path of the Cargo.toml file. It can be seen in the
+// tooltip attached to the project explorer's root item.
+//
 CargoProjectNode::CargoProjectNode(const Utils::FileName& projectFilePath)
     : ProjectExplorer::ProjectNode(projectFilePath)
 {

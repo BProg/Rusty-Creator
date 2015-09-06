@@ -2,6 +2,7 @@
 #define CARGOPROJECT_H
 
 #include <QString>
+#include <QScopedPointer>
 
 #include "projectexplorer/project.h"
 
@@ -25,8 +26,8 @@ public:
 private:
     CargoProjectManager* projectManager_;
     QString projectFileName_;
-    CargoProjectNode* rootNode_;
-    CargoProjectFile* projectFile_;
+    QScopedPointer<CargoProjectNode> rootNode_;
+    QScopedPointer<CargoProjectFile> projectFile_;
 };
 
 #endif

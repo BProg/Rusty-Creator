@@ -15,6 +15,7 @@ ProjectExplorer::Project* CargoProjectManager::openProject(
         const QString& fileName,
         QString* errorString)
 {
+    // It seems that the caller takes ownership.
     return new CargoProject(this, fileName);
 }
 

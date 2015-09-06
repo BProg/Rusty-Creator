@@ -4,7 +4,6 @@
 
 CargoProjectFile::CargoProjectFile(const QString &fileName)
 {
-//    setId(Core::Id:: QString::fromLatin1("Cargo.ProjectFile"));
     setMimeType(QString::fromLatin1("text/cargo.toml"));
     setFilePath(Utils::FileName::fromString(fileName));
 }
