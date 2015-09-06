@@ -20,3 +20,9 @@ bool CargoProjectNode::removeSubProjects(const QStringList &proFilePaths)
 {
     return false;
 }
+
+// The name displayed on the project explorer's root item.
+QString CargoProjectNode::displayName() const
+{
+    return QString::fromLatin1("Stub project node");
+}

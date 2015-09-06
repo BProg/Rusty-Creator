@@ -11,6 +11,7 @@ public:
     virtual bool canAddSubProject(const QString &proFilePath) const override;
     virtual bool addSubProjects(const QStringList &proFilePaths) override;
     virtual bool removeSubProjects(const QStringList &proFilePaths) override;
+    virtual QString displayName() const override;
 };
 
 #endif
