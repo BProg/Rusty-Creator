@@ -1,5 +1,7 @@
 #include "cargoprojectmanager.h"
 
+#include "cargoproject.h"
+
 CargoProjectManager::CargoProjectManager()
 {
 
@@ -13,6 +15,6 @@ ProjectExplorer::Project* CargoProjectManager::openProject(
         const QString& fileName,
         QString* errorString)
 {
-    return nullptr;
+    return new CargoProject(this, fileName);
 }
 

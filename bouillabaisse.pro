@@ -3,12 +3,18 @@ DEFINES += BOUILLABAISSE_LIBRARY
 # Bouillabaisse files
 
 SOURCES += bouillabaisseplugin.cpp \
-    cargoprojectmanager.cpp
+    cargoprojectmanager.cpp \
+    cargoproject.cpp \
+    cargoprojectnode.cpp \
+    cargoprojectfile.cpp
 
 HEADERS += bouillabaisseplugin.h \
         bouillabaisse_global.h \
         bouillabaisseconstants.h \
-    cargoprojectmanager.h
+    cargoprojectmanager.h \
+    cargoproject.h \
+    cargoprojectnode.h \
+    cargoprojectfile.h
 
 # Qt Creator linking
 
