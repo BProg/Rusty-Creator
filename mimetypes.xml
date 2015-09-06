@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+    <mime-type type="text/toml">
+        <sub-class-of type="text/plain"/>
+        <comment>TOML configuration file</comment>
+        <glob pattern="*.toml"/>
+    </mime-type>
+    <mime-type type="text/cargo.toml">
+        <sub-class-of type="text/cargo"/>
+        <comment>Cargo build configuration file</comment>
+        <glob pattern="Cargo.toml"/>
+    </mime-type>
+</mime-info>

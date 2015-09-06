@@ -2,11 +2,13 @@ DEFINES += BOUILLABAISSE_LIBRARY
 
 # Bouillabaisse files
 
-SOURCES += bouillabaisseplugin.cpp
+SOURCES += bouillabaisseplugin.cpp \
+    cargoprojectmanager.cpp
 
 HEADERS += bouillabaisseplugin.h \
         bouillabaisse_global.h \
-        bouillabaisseconstants.h
+        bouillabaisseconstants.h \
+    cargoprojectmanager.h
 
 # Qt Creator linking
 
@@ -35,7 +37,8 @@ QTC_LIB_DEPENDS += \
     # nothing here at this time
 
 QTC_PLUGIN_DEPENDS += \
-    coreplugin
+    coreplugin \
+    projectexplorer
 
 QTC_PLUGIN_RECOMMENDS += \
     # optional plugin dependencies. nothing here at this time
@@ -43,4 +46,10 @@ QTC_PLUGIN_RECOMMENDS += \
 ###### End _dependencies.pri contents ######
 
 include($$QTCREATOR_SOURCES/src/qtcreatorplugin.pri)
+
+DISTFILES += \
+    mimetypes.xml
+
+RESOURCES += \
+    Bouillabaisse.qrc
 
