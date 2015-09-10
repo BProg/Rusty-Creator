@@ -15,4 +15,4 @@ build_script:
   - copy C:\Qt\5.5\msvc2013_64\lib\*.dll qt-creator\bin
 
 artifacts:
-  - qt-creator\bin
+  - path: qt-creator\bin
