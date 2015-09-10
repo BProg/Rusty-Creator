@@ -1,0 +1,5 @@
+syntax: glob
+*.user
+plugin/Bouillabaisse.json
+plugin/Makefile*
+plugin/debug
