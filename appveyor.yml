@@ -1,0 +1,18 @@
+shallow_clone: true
+
+install:
+  - CALL "C:\Program Files (x86)\Microsoft Visual Studio 13.0\VC\vcvarsall.bat" amd64
+  - SET PATH=C:\Qt\5.5\msvc2013_64\bin;%PATH%
+
+build_script:
+  - cd qt-creator
+  - qmake
+  - jom /J 2
+  - cd ..
+  - cd plugin
+  - qmake
+  - jom /J 2
+  - copy C:\Qt\5.5\msvc2013_64\lib\*.dll qt-creator\bin
+
+artifacts:
+  - qt-creator\bin
