@@ -13,6 +13,7 @@ build_script:
   - jom /J 2
   - cd ..
   - copy C:\Qt\5.5\msvc2013_64\bin\*.dll qt-creator\bin
+  - copy C:\Qt\5.5\msvc2013_64\plugins\platforms\*.dll qt-creator\bin
 
 artifacts:
   - path: qt-creator\bin
