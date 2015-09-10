@@ -43,25 +43,33 @@ This is an example of setup:
 2. Download the sources of Qt 5.5.0
 3. Compile Qt
 
-    CALL "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
-    SET PATH=C:\path-to-qt-sources\gnuwin32\bin;%PATH%
-    .\configure -platform win32-msvc2015 -debug-and-release -opensource -c++11 -confirm-license
-    nmake
+```
+CALL "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
+SET PATH=C:\path-to-qt-sources\gnuwin32\bin;%PATH%
+.\configure -platform win32-msvc2015 -debug-and-release -opensource -c++11 -confirm-license
+nmake
+```
 
 4. Add the newly compiled Qt `bin` directory to your path
 
-    SET PATH=C:\path-to-qt-sources\bin;%PATH%
+```
+SET PATH=C:\path-to-qt-sources\bin;%PATH%
+```
 
 5. Clone this project
 6. Go in the qt-creator subdirectory, and compile it
 
-    qmake
-    nmake
+```
+qmake
+nmake
+```
 
 7. Go in the plugin subdirectory, compile
 
-    qmake
-    nmake
+```
+qmake
+nmake
+```
 
 8. Run QtCreator, in qt-creator/bin/qtcreator.exe
 9. To checked that the plugin loaded correctly, click on `Help/About plugins`, and see if the `bouillabaisse` plugin is here and checked.
