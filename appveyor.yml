@@ -6,12 +6,12 @@ install:
 build_script:
   - cd qt-creator
   - qmake
-  - jom /J 2
+  - jom /J 4
   - jom clean
   - cd ..
   - cd plugin
   - qmake
-  - jom /J 2
+  - jom /J 4
   - cd ..
   - copy C:\Qt\5.5\msvc2013_64\bin\*.dll qt-creator\bin
   - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\designer qt-creator\bin\plugins\designer
