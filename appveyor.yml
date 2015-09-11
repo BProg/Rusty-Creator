@@ -6,15 +6,22 @@ install:
 build_script:
   - cd qt-creator
   - qmake
-  - jom /J 2
+  - jom
   - cd ..
   - cd plugin
   - qmake
-  - jom /J 2
+  - jom
   - cd ..
   - copy C:\Qt\5.5\msvc2013_64\bin\*.dll qt-creator\bin
-  - copy C:\Qt\5.5\msvc2013_64\plugins\platforms\*.dll qt-creator\bin
+  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\designer qt-creator\bin\plugins\designer
+  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\iconengines qt-creator\bin\plugins\iconengines
+  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\imageformats qt-creator\bin\plugins\imageformats
+  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\platforms qt-creator\bin\plugins\platforms
+  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\printsupport qt-creator\bin\plugins\printsupport
+  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\sqldrivers qt-creator\bin\plugins\sqldrivers
+
+test: off
 
 artifacts:
-  - path: qt-creator\bin
+  - path: qt-creator
     name: RustyCreator
