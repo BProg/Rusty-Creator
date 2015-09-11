@@ -4,7 +4,7 @@
 
 This is a plugin for *QtCreator* (my C++ IDE of choice), to support the *Rust* programming language.
 
-**This project is in its very early stage**. It is not yet useful for anyone, for now I focused on setting thing up correctly.
+**This project is in its very early stage**. It is not yet useful for anyone, for now I focused on setting things up correctly.
 
 The primary goals for now are:
 
@@ -35,7 +35,7 @@ I configured the plugin's QMake project file so that it knows where to find the 
 
 ## Building the project
 
-To avoid a lot of headaches, it is recommended to use the same compiler for all the software stack. So, Qt, QtCreator and the plugin should be compiled with any supported compiler, but it should be the same for all. The CI build use MSVC 2013. I use MSVC 2015 on my development machine (it is free, and can be used for building open source projects).
+To avoid a lot of headaches, it is recommended to use the same compiler for all the software stack. So, Qt, QtCreator and the plugin should be compiled with any supported compiler, but it should be the same for all. The CI build uses MSVC 2013. I use MSVC 2015 on my development machine (it is free, and can be used for building open source projects).
 
 This is an example of setup:
 
@@ -57,24 +57,24 @@ SET PATH=C:\path-to-qt-sources\bin;%PATH%
 ```
 
 5. Clone this project
-6. Go in the qt-creator subdirectory, and compile it
+6. Go in the `qt-creator` subdirectory, and compile it
 
 ```
 qmake
 nmake
 ```
 
-7. Go in the plugin subdirectory, compile
+7. Go in the `plugin` subdirectory, compile
 
 ```
 qmake
 nmake
 ```
 
-8. Run QtCreator, in qt-creator/bin/qtcreator.exe
+8. Run QtCreator, located at `qt-creator/bin/qtcreator.exe`
 9. To checked that the plugin loaded correctly, click on `Help/About plugins`, and see if the `bouillabaisse` plugin is here and checked.
-10. Congratulations! Your pull requests are welcome!
+10. Congratulations! You can now hack some code and send me pull requests!
 
 ## Current state of the project
 
-Besides the project infrastructure setup, I started implementing the first item on my list: interpret a Cargo.toml file as an entry point for a Cargo-based Rust project. When you click `File/Open File or Project`, and if you select a Cargo.toml file, the file will not be opened in the editor as usual. Instead it will create a project node in the "Projects" pane. That's it, you can't do anything with this node yet.
+Besides the project infrastructure setup, I started implementing the first item on my list: interpret a `Cargo.toml` file as an entry point for a Cargo-based Rust project. When you click `File/Open File or Project`, and then select a `Cargo.toml` file, the file will not opene in the editor as usual. Instead it will create a project node in the "Projects" pane. That's it, you can't do anything with this node yet.
