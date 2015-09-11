@@ -7,6 +7,7 @@ build_script:
   - cd qt-creator
   - qmake
   - jom
+  - jom clean
   - cd ..
   - cd plugin
   - qmake
