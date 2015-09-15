@@ -2,27 +2,28 @@ install:
   - CALL "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" amd64
   - SET PATH=C:\Qt\5.5\msvc2013_64\bin;%PATH%
   - choco install -y jom
+  - SET IFW_PATH=C:\Qt\QtIFW2.0.1
 
 build_script:
-  - cd qt-creator
+  - SET REPO_DIR=%CD%
+  - SET INSTALL_ROOT=%REPO_DIR%\install
+  - cd %REPO_DIR%\qt-creator
+  - qmake CONFIG+=release "QTC_PREFIX=/rusty-creator-3.5.0"
+  - jom
+  - cd %REPO_DIR%\plugin
   - qmake
   - jom
-  - jom clean
-  - cd ..
-  - cd plugin
-  - qmake
-  - jom
-  - cd ..
-  - copy C:\Qt\5.5\msvc2013_64\bin\*.dll qt-creator\bin
-  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\designer qt-creator\bin\plugins\designer
-  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\iconengines qt-creator\bin\plugins\iconengines
-  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\imageformats qt-creator\bin\plugins\imageformats
-  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\platforms qt-creator\bin\plugins\platforms
-  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\printsupport qt-creator\bin\plugins\printsupport
-  - xcopy /E /I C:\Qt\5.5\msvc2013_64\plugins\sqldrivers qt-creator\bin\plugins\sqldrivers
+  - cd %REPO_DIR%\qt-creator  
+  - jom docs
+  - jom install
+  - jom install_docs
+  - jom deployqt
+  - jom deployartifacts
+  - jom bindist_installer
+  - jom installer
+  - tree %REPO_DIR%\install
 
 test: off
 
-artifacts:
-  - path: qt-creator
-    name: RustyCreator
+#artifacts:
+#  - path: qt-creator
