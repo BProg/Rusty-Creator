@@ -21,7 +21,7 @@ build_script:
   - jom deployartifacts
   - jom bindist_installer
   - jom installer
-  - tree %REPO_DIR%\install
+  - tree /F /A %REPO_DIR%
 
 test: off
 
