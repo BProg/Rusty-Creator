@@ -27,4 +27,4 @@ test: off
 
 artifacts:
   - path: qt-creator\qt-creator-windows-rusty-3.5.0.exe
-  - name: qt-creator-windows-rusty-3.5.0.exe
+    name: qt-creator-windows-rusty-3.5.0.exe
