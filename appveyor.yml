@@ -7,6 +7,7 @@ install:
 build_script:
   - SET REPO_DIR=%CD%
   - SET INSTALL_ROOT=%REPO_DIR%\install
+  - SET INSTALL_EDITION=-rusty
   - cd %REPO_DIR%\qt-creator
   - qmake CONFIG+=release "QTC_PREFIX=/rusty-creator-3.5.0"
   - jom
@@ -21,9 +22,9 @@ build_script:
   - jom deployartifacts
   - jom bindist_installer
   - jom installer
-  - tree /F /A %REPO_DIR%
 
 test: off
 
-#artifacts:
-#  - path: qt-creator
+artifacts:
+  - path: qt-creator\qt-creator-windows-rusty-3.5.0.exe
+  - name: qt-creator-windows-rusty-3.5.0.exe
