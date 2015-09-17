@@ -1,27 +1,49 @@
 install:
+  # MSVC 2013. We target x86 because this is what the upstream QtCreator
+  # targets (and only the vcredist_x86 is included in the repo)
   - CALL "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86
   - SET PATH=C:\Qt\5.5\msvc2013\bin;%PATH%
+  # jom is a drop-in replacement for nmake, enabling parallel builds.
+  # Appveyor machines have 2 cores to use
   - choco install -y jom
+  # Used by the "installer" target of QtCreator
   - SET IFW_PATH=C:\Qt\QtIFW2.0.1
 
 build_script:
   - SET REPO_DIR=%CD%
+  # INSTALL_ROOT must be an absolute path
   - SET INSTALL_ROOT=%REPO_DIR%\install
+  # I reuse the INSTALL_EDITION variable to differentiate our installer from
+  # the upstream one. Upstream uses this variable to distinguish between the
+  # commercial (empty string) or the open source edition ("-opensource").
+  # Note that our own version is based on the opensource edition.
   - SET INSTALL_EDITION=-rusty
+  # First, build the upstream QtCreator in release mode, and populate the
+  # "install" directory with the result of the build and some goodies (docs
+  # and debugger helpers)
   - cd %REPO_DIR%\qt-creator
   - qmake CONFIG+=release "QTC_PREFIX=/rusty-creator-3.5.0"
   - jom
-  - cd %REPO_DIR%\plugin
-  - qmake
-  - jom
-  - cd %REPO_DIR%\qt-creator  
   - jom docs
   - jom install
   - jom install_docs
   - jom deployqt
   - jom deployartifacts
+  # Before creating the installer of QtCreator, build our plugin and place
+  # the resulting DLL in the install directory
+  - cd %REPO_DIR%\plugin
+  - qmake "CONFIG+=release" -after "DESTDIR=%REPO_DIR%\install\rusty-creator-3.5.0\lib\qtcreator\plugins"
+  - jom
+  # Now that the install dir contains both QtCreator and our plugin, we can
+  # package everything in the installer.
+  - cd %REPO_DIR%\qt-creator  
   - jom bindist_installer
   - jom installer
+
+cache:
+  # We want to cache the compilation output of the upstream QtCreator.
+  # Updating the qt-creator subrepo will invalidate the cache
+  - qt-creator -> .hgsubstate
 
 test: off
 
