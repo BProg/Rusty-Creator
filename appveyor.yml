@@ -1,7 +1,8 @@
 # enable RDP access to the build machine
-init:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
+#init:
+#  - ps: $blockRdp = $true
+#  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  
 install:
   # MSVC 2013. We target x86 because this is what the upstream QtCreator
   # targets (and only the vcredist_x86 is included in the repo)
@@ -58,7 +59,3 @@ test: off
 
 artifacts:
   - path: qt-creator\qt-creator-windows-rusty-3.5.0.exe
-
-# Keep RDP connection alive when the build finishes
-on_finish:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
