@@ -8,9 +8,9 @@ install:
   # targets (and only the vcredist_x86 is included in the repo)
   - CALL "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86
   - SET PATH=C:\Qt\5.5\msvc2013\bin;%PATH%
-  # jom is a drop-in replacement for nmake, enabling parallel builds.
+  # Used for jom. Jom is a drop-in replacement for nmake, enabling parallel builds.
   # Appveyor machines have 2 cores to use
-  - choco install -y jom
+  - SET PATH=C:\Qt\Tools\QtCreator\bin;%PATH%
   # Used by the "installer" target of QtCreator
   - SET IFW_PATH=C:\Qt\QtIFW2.0.1
 
