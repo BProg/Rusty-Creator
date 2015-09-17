@@ -18,8 +18,8 @@ build_script:
   # Delete the Git repository (but not the working copy). We do this because
   # we want the build system to cache the qt-creator directory where the
   # upstream QtCreator is built. the .git repo is useless, and exceeds the
-  # allowed cache limit.
-  - rmdir /S /Q qt-creator\.git
+  # allowed cache limit. Cache disabled for now, see below.
+  #- rmdir /S /Q qt-creator\.git
   - SET REPO_DIR=%CD%
   # INSTALL_ROOT must be an absolute path
   - SET INSTALL_ROOT=%REPO_DIR%\install
@@ -50,10 +50,11 @@ build_script:
   - jom bindist_installer
   - jom installer
 
-cache:
-  # We want to cache the compilation output of the upstream QtCreator.
-  # Updating the qt-creator subrepo will invalidate the cache
-  - qt-creator -> .hgsubstate
+# I disabled the cache for now, as it exceeds the limit
+#cache:
+#  # We want to cache the compilation output of the upstream QtCreator.
+#  # Updating the qt-creator subrepo will invalidate the cache
+#  - qt-creator -> .hgsubstate
 
 test: off
 
