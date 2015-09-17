@@ -10,6 +10,11 @@ install:
   - SET IFW_PATH=C:\Qt\QtIFW2.0.1
 
 build_script:
+  # Delete the Git repository (but not the working copy). We do this because
+  # we want the build system to cache the qt-creator directory where the
+  # upstream QtCreator is built. the .git repo is useless, and exceeds the
+  # allowed cache limit.
+  - rmdir /S /Q qt-creator/.git
   - SET REPO_DIR=%CD%
   # INSTALL_ROOT must be an absolute path
   - SET INSTALL_ROOT=%REPO_DIR%\install
