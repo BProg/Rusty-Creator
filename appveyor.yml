@@ -14,7 +14,7 @@ build_script:
   # we want the build system to cache the qt-creator directory where the
   # upstream QtCreator is built. the .git repo is useless, and exceeds the
   # allowed cache limit.
-  - rmdir /S /Q qt-creator/.git
+  - rmdir /S /Q qt-creator\.git
   - SET REPO_DIR=%CD%
   # INSTALL_ROOT must be an absolute path
   - SET INSTALL_ROOT=%REPO_DIR%\install
