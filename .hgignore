@@ -3,3 +3,6 @@ syntax: glob
 plugin/Bouillabaisse.json
 plugin/Makefile*
 plugin/debug
+plugin/release
+install
+env.bat
