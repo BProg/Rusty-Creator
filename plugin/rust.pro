@@ -1,16 +1,16 @@
-DEFINES += BOUILLABAISSE_LIBRARY
+DEFINES += RUST_LIBRARY
 
-# Bouillabaisse files
+# Rust files
 
-SOURCES += bouillabaisseplugin.cpp \
+SOURCES += rustplugin.cpp \
     cargoprojectmanager.cpp \
     cargoproject.cpp \
     cargoprojectnode.cpp \
     cargoprojectfile.cpp
 
-HEADERS += bouillabaisseplugin.h \
-        bouillabaisse_global.h \
-        bouillabaisseconstants.h \
+HEADERS += rustplugin.h \
+        rust_global.h \
+        rustconstants.h \
     cargoprojectmanager.h \
     cargoproject.h \
     cargoprojectnode.h \
@@ -38,7 +38,7 @@ isEmpty(IDE_BUILD_TREE):IDE_BUILD_TREE=../qt-creator
 ###### <dirname>_dependencies.pri, where <dirname> is the name of the directory containing the
 ###### plugin's sources.
 
-QTC_PLUGIN_NAME = Bouillabaisse
+QTC_PLUGIN_NAME = Rust
 QTC_LIB_DEPENDS += \
     # nothing here at this time
 
@@ -57,5 +57,5 @@ DISTFILES += \
     mimetypes.xml
 
 RESOURCES += \
-    Bouillabaisse.qrc
+    Rust.qrc
 

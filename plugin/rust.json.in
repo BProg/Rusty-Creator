@@ -1,0 +1,13 @@
+{
+    \"Name\" : \"Rust\",
+    \"Version\" : \"$$QTCREATOR_VERSION\",
+    \"CompatVersion\" : \"$$QTCREATOR_COMPAT_VERSION\",
+    \"Vendor\" : \"Olivier Renaud\",
+    \"Copyright\" : \"(C) 2015 Olivier Renaud\",
+    \"License\" : \"MIT\",
+    \"Category\" : \"Other Languages\",
+    \"Description\" : \"Rust language support\",
+    \"Url\" : \"https://bitbucket.org/olivren/rustycreator\",
+    $$dependencyList
+}
+

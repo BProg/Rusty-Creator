@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/bouillabaisse">
+    <qresource prefix="/rust">
         <file>mimetypes.xml</file>
     </qresource>
 </RCC>
