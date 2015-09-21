@@ -2,13 +2,14 @@
 
 #include <QFileInfo>
 #include <QDir>
+#include <QFileInfoList>
 #include <projectexplorer/projectnodes.h>
 
 using namespace Rust;
 using namespace Utils;
 using namespace ProjectExplorer;
 
-void populateNode(FolderNode* node, QString dirPath = QString()) {
+void populateNode(FolderNode* node, QFileInfoList excluded, QString dirPath = QString()) {
     if(dirPath.isNull())
         dirPath = node->path().toString();
 
@@ -16,7 +17,9 @@ void populateNode(FolderNode* node, QString dirPath = QString()) {
     QList<FileNode*> subFiles;
 
     for (QFileInfo sub: QDir(dirPath).entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot, QDir::DirsFirst | QDir::Name)) {
-        if(sub.isDir())
+        if(excluded.contains(sub))
+            continue;
+        else if(sub.isDir())
             subDirs << new FolderNode(FileName(sub), FolderNodeType, sub.fileName());
         else
             subFiles << new FileNode(FileName(sub), UnknownFileType, false);
@@ -26,7 +29,7 @@ void populateNode(FolderNode* node, QString dirPath = QString()) {
     node->addFileNodes(subFiles);
 
     for (FolderNode* subDir : subDirs)
-        populateNode(subDir);
+        populateNode(subDir, excluded);
 }
 
 // `projectFilePath` is the path of the Cargo.toml file. It can be seen in the
@@ -36,7 +39,14 @@ CargoProjectNode::CargoProjectNode(const FileName& projectFilePath)
     : ProjectExplorer::ProjectNode(projectFilePath)
 {
     projName_ = projectFilePath.parentDir().fileName();
-    populateNode(this, projectFilePath.parentDir().toString());
+    QDir mainDir = QDir(projectFilePath.parentDir().toString());
+    QFileInfoList excluded;
+    excluded << QFileInfo(mainDir, QString::fromLatin1("target"))
+             << QFileInfo(mainDir, QString::fromLatin1(".hg"))
+             << QFileInfo(mainDir, QString::fromLatin1(".git"))
+             << QFileInfo(mainDir, QString::fromLatin1(".svn"))
+             << QFileInfo(mainDir, QString::fromLatin1(".darcs"));
+    populateNode(this, excluded, mainDir.path());
 }
 
 bool CargoProjectNode::canAddSubProject(const QString &proFilePath) const
