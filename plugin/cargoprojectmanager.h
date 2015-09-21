@@ -16,10 +16,10 @@ class CargoProjectManager : public ProjectExplorer::IProjectManager
 public:
   CargoProjectManager();
 
-  virtual QString mimeType() const;
+  virtual QString mimeType() const override;
 
   virtual ProjectExplorer::Project* openProject(const QString & fileName,
-                                                QString * errorString);
+                                                QString * errorString) override;
 };
 }
 
