@@ -5,6 +5,8 @@
 #include "cargoprojectmanager.h"
 #include "cargoprojectfile.h"
 
+using namespace Rust;
+
 CargoProject::CargoProject(CargoProjectManager* projectManager, QString projectFileName)
     : projectManager_(projectManager),
       projectFileName_(projectFileName),
@@ -40,5 +42,6 @@ ProjectExplorer::ProjectNode* CargoProject::rootProjectNode() const
 
 QStringList CargoProject::files(ProjectExplorer::Project::FilesMode fileMode) const
 {
+    Q_UNUSED(fileMode)
     return QStringList();
 }

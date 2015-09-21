@@ -3,6 +3,8 @@
 
 #include "projectexplorer/projectnodes.h"
 
+namespace Rust {
+
 class CargoProjectNode : public ProjectExplorer::ProjectNode
 {
 public:
@@ -13,5 +15,7 @@ public:
     virtual bool removeSubProjects(const QStringList &proFilePaths) override;
     virtual QString displayName() const override;
 };
+
+}
 
 #endif

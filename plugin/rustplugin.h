@@ -6,7 +6,6 @@
 #include <extensionsystem/iplugin.h>
 
 namespace Rust {
-namespace Internal {
 
 class RustPlugin : public ExtensionSystem::IPlugin
 {
@@ -21,9 +20,7 @@ public:
   void extensionsInitialized();
   ShutdownFlag aboutToShutdown();
 
-
 };
-}
 }
 
 #endif

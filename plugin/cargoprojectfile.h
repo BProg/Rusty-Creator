@@ -5,7 +5,9 @@
 
 #include <QString>
 
-class CargoProject;
+namespace Rust {class CargoProject;}
+
+namespace Rust {
 
 class CargoProjectFile : public Core::IDocument
 {
@@ -21,5 +23,6 @@ public:
     virtual bool isSaveAsAllowed() const override;
     virtual bool reload(QString *errorString, ReloadFlag flag, ChangeType type) override;
 };
+}
 
 #endif

@@ -7,7 +7,7 @@
 
 #include "cargoprojectmanager.h"
 
-using namespace Rust::Internal;
+using namespace Rust;
 
 RustPlugin::RustPlugin()
 {

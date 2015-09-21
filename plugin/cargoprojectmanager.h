@@ -7,6 +7,8 @@
 
 namespace ProjectExplorer { class Project; }
 
+namespace Rust {
+
 class CargoProjectManager : public ProjectExplorer::IProjectManager
 {
   Q_OBJECT
@@ -16,7 +18,9 @@ public:
 
   virtual QString mimeType() const;
 
-  virtual ProjectExplorer::Project* openProject(const QString & fileName, QString * errorString);
+  virtual ProjectExplorer::Project* openProject(const QString & fileName,
+                                                QString * errorString);
 };
+}
 
 #endif

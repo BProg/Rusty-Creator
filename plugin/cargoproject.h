@@ -6,9 +6,11 @@
 
 #include "projectexplorer/project.h"
 
-class CargoProjectManager;
-class CargoProjectNode;
-class CargoProjectFile;
+namespace Rust { class CargoProjectManager; }
+namespace Rust { class CargoProjectNode; }
+namespace Rust { class CargoProjectFile; }
+
+namespace Rust {
 
 class CargoProject : public ProjectExplorer::Project
 {
@@ -29,5 +31,6 @@ private:
     QScopedPointer<CargoProjectNode> rootNode_;
     QScopedPointer<CargoProjectFile> projectFile_;
 };
+}
 
 #endif

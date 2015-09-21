@@ -6,3 +6,4 @@ plugin/debug
 plugin/release
 install
 env.bat
+build*
