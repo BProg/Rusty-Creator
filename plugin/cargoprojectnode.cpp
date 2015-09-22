@@ -3,41 +3,23 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QFileInfoList>
+#include <QFileSystemWatcher>
 #include <projectexplorer/projectnodes.h>
 
 using namespace Rust;
 using namespace Utils;
 using namespace ProjectExplorer;
 
-void populateNode(FolderNode* node, QFileInfoList excluded, QString dirPath = QString()) {
-    if(dirPath.isNull())
-        dirPath = node->path().toString();
-
-    QList<FolderNode*> subDirs;
-    QList<FileNode*> subFiles;
-
-    for (QFileInfo sub: QDir(dirPath).entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot, QDir::DirsFirst | QDir::Name)) {
-        if(excluded.contains(sub))
-            continue;
-        else if(sub.isDir())
-            subDirs << new FolderNode(FileName(sub), FolderNodeType, sub.fileName());
-        else
-            subFiles << new FileNode(FileName(sub), UnknownFileType, false);
-    }
-
-    node->addFolderNodes(subDirs);
-    node->addFileNodes(subFiles);
-
-    for (FolderNode* subDir : subDirs)
-        populateNode(subDir, excluded);
-}
-
 // `projectFilePath` is the path of the Cargo.toml file. It can be seen in the
 // tooltip attached to the project explorer's root item.
 //
 CargoProjectNode::CargoProjectNode(const FileName& projectFilePath)
-    : ProjectExplorer::ProjectNode(projectFilePath)
+    : ProjectExplorer::ProjectNode(projectFilePath),
+      fsWatcher_(new QFileSystemWatcher(this))
 {
+    connect(fsWatcher_, SIGNAL(directoryChanged(QString)),
+            this, SLOT(updateDirectoryContent(QString)));
+
     projName_ = projectFilePath.parentDir().fileName();
     QDir mainDir = QDir(projectFilePath.parentDir().toString());
     QFileInfoList excluded;
@@ -71,4 +53,36 @@ bool CargoProjectNode::removeSubProjects(const QStringList &proFilePaths)
 QString CargoProjectNode::displayName() const
 {
     return projName_;
+}
+
+void CargoProjectNode::updateDirectoryContent(const QString & dir) {
+    qDebug() << dir;
+}
+
+void CargoProjectNode::populateNode(FolderNode* node,
+                                    const QFileInfoList& excluded,
+                                    QString dirPath)
+{
+    if(dirPath.isNull())
+        dirPath = node->path().toString();
+
+    fsWatcher_->addPath(dirPath);
+
+    QList<FolderNode*> subDirs;
+    QList<FileNode*> subFiles;
+
+    for (QFileInfo sub: QDir(dirPath).entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot, QDir::DirsFirst | QDir::Name)) {
+        if(excluded.contains(sub))
+            continue;
+        else if(sub.isDir())
+            subDirs << new FolderNode(FileName(sub), FolderNodeType, sub.fileName());
+        else
+            subFiles << new FileNode(FileName(sub), UnknownFileType, false);
+    }
+
+    node->addFolderNodes(subDirs);
+    node->addFileNodes(subFiles);
+
+    for (FolderNode* subDir : subDirs)
+        populateNode(subDir, excluded);
 }
