@@ -6,8 +6,13 @@
         <glob pattern="*.toml"/>
     </mime-type>
     <mime-type type="text/cargo.toml">
-        <sub-class-of type="text/cargo"/>
+        <sub-class-of type="text/toml"/>
         <comment>Cargo build configuration file</comment>
         <glob pattern="Cargo.toml"/>
+    </mime-type>
+    <mime-type type="text/cargo.lock">
+        <sub-class-of type="text/toml"/>
+        <comment>Cargo build lock file</comment>
+        <glob pattern="Cargo.lock"/>
     </mime-type>
 </mime-info>
