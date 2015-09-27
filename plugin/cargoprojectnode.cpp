@@ -17,6 +17,24 @@ CargoProjectNode::CargoProjectNode(const FileName& projectFilePath)
     : ProjectExplorer::ProjectNode(projectFilePath),
       fsWatcher_(new QFileSystemWatcher(this))
 {
+    // Hack: `QFileSystemWatcher` does not work well on Windows. When a folder
+    // is being watched, and if the user tries to delete its parent directory
+    // using the Windows file explorer, then a "Folder access denied" error appears
+    // and the folder cannot be deleted.
+    //
+    // To work around the problem, we force `QFileSystemWatcher` to use the
+    // polling strategy (as opposed to the native filesystem watching API),
+    // which is more resource intensive and less reactive, but does not cause
+    // this problem.
+    //
+    // https://bugreports.qt.io/browse/QTBUG-2331
+    // https://bugreports.qt.io/browse/QTBUG-38118
+    // https://bugreports.qt.io/browse/QTBUG-7905
+    //
+    #ifdef Q_OS_WIN
+    fsWatcher_->setObjectName(QString::fromLatin1("_qt_autotest_force_engine_poller"));
+    #endif
+
     connect(fsWatcher_, SIGNAL(directoryChanged(QString)),
             this, SLOT(updateDirContent(QString)));
 
