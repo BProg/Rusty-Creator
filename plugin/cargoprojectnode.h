@@ -4,7 +4,8 @@
 #include "projectexplorer/projectnodes.h"
 #include <QObject>
 #include <QString>
-#include <QFileInfo>
+#include <QFileInfoList>
+#include "utils/fileutils.h"
 
 class QStringList;
 class QFileSystemWatcher;
@@ -25,14 +26,20 @@ public:
     virtual QString displayName() const override;
 
 private slots:
-    void updateDirectoryContent(const QString&);
+    void updateDirContent(const QString&);
 
 private:
-    void populateNode(ProjectExplorer::FolderNode* node,
-                      const QFileInfoList& excluded,
-                      QString dirPath = QString());
+    const Utils::FileName& realDir(FolderNode* node);
+    enum SearchState { SearchStop, SearchContinue };
+    SearchState updateDirContentRecursive(FolderNode* node, const Utils::FileName& dir);
+    void updateFilesAndDirs(FolderNode* node);
+    void updateFiles(FolderNode* node);
+    void updateDirs(FolderNode* node);
+    void populateNode(ProjectExplorer::FolderNode* node);
+    Utils::FileName projDir_;
     QString projName_;
     QFileSystemWatcher* fsWatcher_;
+    QFileInfoList excludedPaths_;
 };
 
 }
