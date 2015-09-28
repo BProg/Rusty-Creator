@@ -44,6 +44,7 @@ build_script:
   - cd %REPO_DIR%\plugin
   - qmake "CONFIG+=release" -after "DESTDIR=%REPO_DIR%\install\rusty-creator-3.5.0\lib\qtcreator\plugins"
   - jom
+  - jom highlights
   # Now that the install dir contains both QtCreator and our plugin, we can
   # package everything in the installer.
   - cd %REPO_DIR%\qt-creator  

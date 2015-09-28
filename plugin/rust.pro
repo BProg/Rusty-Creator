@@ -59,3 +59,6 @@ DISTFILES += \
 RESOURCES += \
     Rust.qrc
 
+copy_highlights.target = highlights
+copy_highlights.commands = $$QMAKE_COPY $$shell_path(generic-highlighter/*.xml) $$shell_path($$DESTDIR/../../../share/qtcreator/generic-highlighter)
+QMAKE_EXTRA_TARGETS += copy_highlights

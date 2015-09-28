@@ -1,0 +1,2 @@
+toml: https://github.com/visualfc/liteide/blob/master/liteidex/deploy/liteeditor/kate/toml.xml
+markdown and rust: https://quickgit.kde.org/?p=ktexteditor.git&a=tree&f=src%2Fsyntax%2Fdata
