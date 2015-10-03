@@ -6,7 +6,7 @@ using namespace Rust;
 
 CargoProjectFile::CargoProjectFile(const QString &fileName)
 {
-    setMimeType(QString::fromLatin1("text/cargo.toml"));
+    setMimeType(QString::fromLatin1("text/x-cargo.toml"));
     setFilePath(Utils::FileName::fromString(fileName));
 }
 

@@ -10,7 +10,7 @@ CargoProjectManager::CargoProjectManager()
 }
 
 QString CargoProjectManager::mimeType() const {
-    return QString::fromLatin1("text/cargo.toml");
+    return QString::fromLatin1("text/x-cargo.toml");
 }
 
 ProjectExplorer::Project*

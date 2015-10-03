@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
-    <mime-type type="text/toml">
+    <mime-type type="text/x-toml">
         <sub-class-of type="text/plain"/>
         <comment>TOML configuration file</comment>
         <glob pattern="*.toml"/>
     </mime-type>
-    <mime-type type="text/cargo.toml">
-        <sub-class-of type="text/toml"/>
+    <mime-type type="text/x-cargo.toml">
+        <sub-class-of type="text/x-toml"/>
         <comment>Cargo build configuration file</comment>
         <glob pattern="Cargo.toml"/>
     </mime-type>
-    <mime-type type="text/cargo.lock">
-        <sub-class-of type="text/toml"/>
+    <mime-type type="text/x-cargo.lock">
+        <sub-class-of type="text/x-toml"/>
         <comment>Cargo build lock file</comment>
         <glob pattern="Cargo.lock"/>
     </mime-type>
