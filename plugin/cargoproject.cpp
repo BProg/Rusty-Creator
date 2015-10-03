@@ -20,7 +20,7 @@ CargoProject::CargoProject(CargoProjectManager* projectManager, QString projectF
 // and in the project root's contextual menu.
 QString CargoProject::displayName() const
 {
-    return QString::fromLatin1("Stub Display Name");
+    return Utils::FileName::fromString(projectFileName_).parentDir().fileName();
 }
 
 // Not sure in what context this document is used.
