@@ -7,3 +7,4 @@ plugin/release
 install
 env.bat
 build*
+plugin/Rust.json
