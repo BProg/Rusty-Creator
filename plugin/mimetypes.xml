@@ -7,12 +7,20 @@
     </mime-type>
     <mime-type type="text/x-cargo.toml">
         <sub-class-of type="text/x-toml"/>
-        <comment>Cargo build configuration file</comment>
+        <comment>Cargo manifest file</comment>
         <glob pattern="Cargo.toml"/>
     </mime-type>
     <mime-type type="text/x-cargo.lock">
         <sub-class-of type="text/x-toml"/>
-        <comment>Cargo build lock file</comment>
+        <comment>Cargo lock file</comment>
         <glob pattern="Cargo.lock"/>
+    </mime-type>
+    <mime-type type="text/x-cargo.manifest">
+        <sub-class-of type="text/x-toml"/>
+        <comment>Cargo configuration file</comment>
+        <glob pattern="config"/>
+        <treemagic>
+            <treematch path=".cargo" />
+        </treemagic>
     </mime-type>
 </mime-info>
