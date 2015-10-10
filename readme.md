@@ -22,14 +22,16 @@ QtCreator itself is multi-platform. My current main development machine is a *Wi
 
 ## Continuous integration
 
-This repository is built using *Appveyor CI*. You can find the full configuration for it in the `appveyor.yml` file. It builds QtCreator and the plugin on Windows using MSVC 2013 and Qt 5.5, targeting x86_64 processors. The result of these builds are available as a zip file, that can be downloaded and run on a 64 bit Windows. Click the "build" button located at the top of this document, and click on the "artifacts" link to access the zip.
+This repository is built using *Appveyor CI*. You can find the full configuration for it in the `appveyor.yml` file. It builds QtCreator and the plugin on Windows using MSVC 2013 and Qt 5.5, targeting x86 processors. The results of these builds are available as executable installers. Click the "build" button located at the top of this document, and click on the "artifacts" link to access the zip.
 
 ## Organization of the repository
 
 This project consists of
 
 1. `qt-creator`, a Hg subrepository that points to the Git QtCreator repository, on the v3.5.0 tag.
-2. `plugin`, a QtCreator plugin project.
+2. `dev-doc`, some developers-oriented docs.
+3. `plugin`, a QtCreator plugin project.
+4. `plugin/generic-highlighter`, syntax highlighting files that are copiedto the QtCreator install.
 
 I configured the plugin's QMake project file so that it knows where to find the sources of QtCreator (`../qt-creator`). Also, QtCreator plugins are by default configured so that they install themselves in the QtCreator build directory.
 
@@ -69,12 +71,29 @@ nmake
 ```
 qmake
 nmake
+nmake highlights
 ```
 
 8. Run QtCreator, located at `qt-creator/bin/qtcreator.exe`
-9. To checked that the plugin loaded correctly, click on `Help/About plugins`, and see if the `bouillabaisse` plugin is here and checked.
+9. To checked that the plugin loaded correctly, click on `Help/About plugins`, and see if the `Rust` plugin appears in the "Other Languages" section, and is checked.
 10. Congratulations! You can now hack some code and send me pull requests!
 
 ## Current state of the project
 
-Besides the project infrastructure setup, I started implementing the first item on my list: interpret a `Cargo.toml` file as an entry point for a Cargo-based Rust project. When you click `File/Open File or Project`, and then select a `Cargo.toml` file, the file will not opene in the editor as usual. Instead it will create a project node in the "Projects" pane. That's it, you can't do anything with this node yet.
+RustyCreator contains exactly the same features as QtCreator opensource, plus the following enhancements:
+
+* CI integration using Appveyor, that generates a Windows installer on hg push.
+
+* Syntax highlight based on the Kate format:
+  * Rust (`*.rs`): it's a cheap way to provide syntax highlight for now
+  * Markdown (`*.md`, `*.mmd`, `*.markdown`): often used for readme files
+  * Toml (`*.toml`, `Cargo.lock`, `.cargo/config`): used by Cargo
+  * Yaml (`*.yml`, `*.yaml`): used for Travis CI and Appveyor CI configuration
+  * Json (`*.json`): 'cause it's popular
+
+  Note that I just integrated existing Kate syntax highlight files, I didn't write any of them.
+  
+* Cargo project files (`Cargo.toml`) are supported as QtCreator project files. This means that in `File/Open File of Project`, the user can choose a `Cargo.toml` file and the project will be imported into the projects list.
+
+* In the Projects view, a Cargo-based project shows the content of the directory where `Cargo.toml` lives, and all its subdirectories. Also, any change on the filesystem is reflected automatically in this tree.
+ 
