@@ -6,6 +6,7 @@
 #include <utils/mimetypes/mimedatabase.h>
 
 #include "cargoprojectmanager.h"
+#include "rusttoolchainfactory.h"
 
 using namespace Rust;
 
@@ -35,6 +36,7 @@ bool RustPlugin::initialize(const QStringList &arguments, QString *errorString)
     Utils::MimeDatabase::addMimeTypes(QLatin1String(":/rust/mimetypes.xml"));
 
     addAutoReleasedObject(new CargoProjectManager);
+    addAutoReleasedObject(new RustToolChainFactory);
 
     return true;
 }

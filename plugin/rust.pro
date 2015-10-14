@@ -6,7 +6,11 @@ SOURCES += rustplugin.cpp \
     cargoprojectmanager.cpp \
     cargoproject.cpp \
     cargoprojectnode.cpp \
-    cargoprojectfile.cpp
+    cargoprojectfile.cpp \
+    rusttoolchainfactory.cpp \
+    rusttoolchain.cpp \
+    rustoutputparser.cpp \
+    rusttoolchainconfigwidget.cpp
 
 HEADERS += rustplugin.h \
         rust_global.h \
@@ -14,7 +18,11 @@ HEADERS += rustplugin.h \
     cargoprojectmanager.h \
     cargoproject.h \
     cargoprojectnode.h \
-    cargoprojectfile.h
+    cargoprojectfile.h \
+    rusttoolchainfactory.h \
+    rusttoolchain.h \
+    rustoutputparser.h \
+    rusttoolchainconfigwidget.h
 
 # Qt Creator linking
 
