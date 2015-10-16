@@ -9,7 +9,7 @@ namespace Rust {
 
 RustToolChainFactory::RustToolChainFactory()
 {
-
+    setDisplayName(QString::fromLatin1("Rust"));
 }
 
 QList<ToolChain*> RustToolChainFactory::autoDetect()
