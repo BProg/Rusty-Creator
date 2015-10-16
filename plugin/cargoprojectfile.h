@@ -16,6 +16,7 @@ class CargoProjectFile : public Core::IDocument
 public:
     CargoProjectFile(const QString &fileName);
 
+    // Core::IDocument interface
     virtual bool save(QString *errorString, const QString &fileName, bool autoSave) override;
     virtual QString defaultPath() const override;
     virtual QString suggestedFileName() const override;

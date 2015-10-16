@@ -10,6 +10,7 @@ class RustToolChainFactory : public ProjectExplorer::ToolChainFactory
 public:
     RustToolChainFactory();
 
+    // ProjectExplorer::ToolChainFactory interface
     virtual QList<ProjectExplorer::ToolChain*> autoDetect() override;
     virtual bool canCreate() override;
     virtual ProjectExplorer::ToolChain* create() override;

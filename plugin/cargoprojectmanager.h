@@ -16,8 +16,8 @@ class CargoProjectManager : public ProjectExplorer::IProjectManager
 public:
   CargoProjectManager();
 
+  // ProjectExplorer::IProjectManager interface
   virtual QString mimeType() const override;
-
   virtual ProjectExplorer::Project* openProject(const QString & fileName,
                                                 QString * errorString) override;
 };

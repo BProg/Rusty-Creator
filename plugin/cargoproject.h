@@ -19,6 +19,7 @@ class CargoProject : public ProjectExplorer::Project
 public:
     CargoProject(CargoProjectManager* projectManager, QString projectFileName);
 
+    // ProjectExplorer::Project interface
     virtual QString displayName() const override;
     virtual Core::IDocument* document() const override;
     virtual ProjectExplorer::IProjectManager* projectManager() const override;

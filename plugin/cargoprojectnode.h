@@ -20,6 +20,7 @@ class CargoProjectNode : public QObject, public ProjectExplorer::ProjectNode
 public:
     CargoProjectNode(const Utils::FileName& projectFilePath);
 
+    // ProjectExplorer::ProjectNode interface
     virtual bool canAddSubProject(const QString &proFilePath) const override;
     virtual bool addSubProjects(const QStringList &proFilePaths) override;
     virtual bool removeSubProjects(const QStringList &proFilePaths) override;
