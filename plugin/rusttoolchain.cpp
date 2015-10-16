@@ -34,34 +34,40 @@ QString RustToolChain::type() const
 
 QString RustToolChain::typeDisplayName() const
 {
+    // STUB
     return QString::fromLatin1("MSVC");
 }
 
 Abi RustToolChain::targetAbi() const
 {
+    // STUB
     return Abi::hostAbi();
 }
 
 bool RustToolChain::isValid() const
 {
+    // STUB
     return true;
 }
 
 QByteArray RustToolChain::predefinedMacros(const QStringList& cxxflags) const
 {
     Q_UNUSED(cxxflags)
+    // STUB
     return QByteArray();
 }
 
 ToolChain::CompilerFlags RustToolChain::compilerFlags(const QStringList& cxxflags) const
 {
     Q_UNUSED(cxxflags)
+    // STUB
     return ToolChain::NoFlags;
 }
 
 ToolChain::WarningFlags RustToolChain::warningFlags(const QStringList& cflags) const
 {
     Q_UNUSED(cflags)
+    // STUB
     return ToolChain::WarningsDefault;
 }
 
@@ -69,22 +75,26 @@ QList<HeaderPath> RustToolChain::systemHeaderPaths(const QStringList& cxxflags, 
 {
     Q_UNUSED(cxxflags)
     Q_UNUSED(sysRoot)
+    // STUB
     return QList<HeaderPath>();
 }
 
 void RustToolChain::addToEnvironment(Environment& env) const
 {
     Q_UNUSED(env)
+    // STUB
 }
 
 QString RustToolChain::makeCommand(const Environment& env) const
 {
     Q_UNUSED(env)
+    // STUB
     return QString::fromLatin1("rustc");
 }
 
 FileName RustToolChain::compilerCommand() const
 {
+    // STUB
     return FileName::fromString(QString::fromLatin1(R"(C:\Program Files\Rust stable 1.1\bin\rustc.exe)"));
 }
 
@@ -100,6 +110,7 @@ ToolChainConfigWidget* RustToolChain::configurationWidget()
 
 ToolChain* RustToolChain::clone() const
 {
+    // STUB
     return nullptr;
 }
 

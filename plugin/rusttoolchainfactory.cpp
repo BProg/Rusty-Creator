@@ -14,6 +14,7 @@ RustToolChainFactory::RustToolChainFactory()
 
 QList<ToolChain*> RustToolChainFactory::autoDetect()
 {
+    // STUB
     return QList<ToolChain*>();
 }
 
@@ -30,12 +31,14 @@ ToolChain* RustToolChainFactory::create()
 bool RustToolChainFactory::canRestore(const QVariantMap& data)
 {
     Q_UNUSED(data)
+    // STUB
     return false;
 }
 
 ToolChain* RustToolChainFactory::restore(const QVariantMap& data)
 {
     Q_UNUSED(data)
+    // STUB
     return nullptr;
 }
 

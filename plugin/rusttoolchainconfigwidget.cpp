@@ -37,6 +37,7 @@ void Rust::RustToolChainConfigWidget::applyImpl()
 
 void Rust::RustToolChainConfigWidget::discardImpl()
 {
+    // STUB
 }
 
 bool Rust::RustToolChainConfigWidget::isDirtyImpl() const

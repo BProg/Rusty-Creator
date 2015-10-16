@@ -43,5 +43,6 @@ ProjectExplorer::ProjectNode* CargoProject::rootProjectNode() const
 QStringList CargoProject::files(ProjectExplorer::Project::FilesMode fileMode) const
 {
     Q_UNUSED(fileMode)
+    // STUB
     return QStringList();
 }

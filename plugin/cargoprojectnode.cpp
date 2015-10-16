@@ -52,18 +52,21 @@ CargoProjectNode::CargoProjectNode(const FileName& projectFilePath)
 bool CargoProjectNode::canAddSubProject(const QString &proFilePath) const
 {
     Q_UNUSED(proFilePath)
+    // STUB
     return false;
 }
 
 bool CargoProjectNode::addSubProjects(const QStringList &proFilePaths)
 {
     Q_UNUSED(proFilePaths)
+    // STUB
     return false;
 }
 
 bool CargoProjectNode::removeSubProjects(const QStringList &proFilePaths)
 {
     Q_UNUSED(proFilePaths)
+    // STUB
     return false;
 }
 

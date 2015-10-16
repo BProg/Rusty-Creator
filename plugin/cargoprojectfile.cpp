@@ -15,26 +15,31 @@ bool CargoProjectFile::save(QString *errorString, const QString &fileName, bool 
     Q_UNUSED(errorString)
     Q_UNUSED(fileName)
     Q_UNUSED(autoSave)
+    // STUB
     return false;
 }
 
 QString CargoProjectFile::defaultPath() const
 {
+    // STUB
     return QString();
 }
 
 QString CargoProjectFile::suggestedFileName() const
 {
+    // STUB
     return QString();
 }
 
 bool CargoProjectFile::isModified() const
 {
+    // STUB
     return false;
 }
 
 bool CargoProjectFile::isSaveAsAllowed() const
 {
+    // STUB
     return false;
 }
 
@@ -43,5 +48,6 @@ bool CargoProjectFile::reload(QString *errorString, Core::IDocument::ReloadFlag 
     Q_UNUSED(errorString)
     Q_UNUSED(flag)
     Q_UNUSED(type)
+    // STUB
     return false;
 }
