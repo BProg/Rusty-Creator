@@ -10,6 +10,17 @@ class RustToolChain : public ProjectExplorer::ToolChain
 public:
     RustToolChain();
 
+    enum ReleaseChannel {
+        ChannelStable = 0,
+        ChannelBeta = 1,
+        ChannelNightly = 2,
+        ChannelUnofficial = 3
+    };
+
+    void setReleaseChannel(ReleaseChannel c);
+    ReleaseChannel releaseChannel();
+
+    // ProjectExplorer::ToolChain interface
     virtual QString type() const override;
     virtual QString typeDisplayName() const override;
     virtual ProjectExplorer::Abi targetAbi() const override;
@@ -24,6 +35,9 @@ public:
     virtual ProjectExplorer::IOutputParser* outputParser() const override;
     virtual ProjectExplorer::ToolChainConfigWidget* configurationWidget() override;
     virtual ProjectExplorer::ToolChain* clone() const override;
+
+private:
+    ReleaseChannel releaseChannel_;
 };
 
 }

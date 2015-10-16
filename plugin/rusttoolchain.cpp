@@ -12,9 +12,19 @@ using namespace Utils;
 namespace Rust {
 
 RustToolChain::RustToolChain()
-    : ToolChain(QString::fromLatin1("RustToolChainId"), ToolChain::AutoDetection)
+    : ToolChain(QString::fromLatin1("RustToolChainId"), ToolChain::ManualDetection)
 {
+    setDisplayName(QString::fromLatin1("Rust Compiler"));
+}
 
+void RustToolChain::setReleaseChannel(RustToolChain::ReleaseChannel c)
+{
+    releaseChannel_ = c;
+}
+
+RustToolChain::ReleaseChannel RustToolChain::releaseChannel()
+{
+    return releaseChannel_;
 }
 
 QString RustToolChain::type() const
@@ -24,7 +34,7 @@ QString RustToolChain::type() const
 
 QString RustToolChain::typeDisplayName() const
 {
-    return QString::fromLatin1("Rust compiler");
+    return QString::fromLatin1("MSVC");
 }
 
 Abi RustToolChain::targetAbi() const
