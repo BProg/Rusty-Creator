@@ -190,6 +190,8 @@ void CargoProjectNode::updateDirs(FolderNode* node) {
 
 void CargoProjectNode::populateNode(FolderNode* node)
 {
+    Q_ASSERT(node->fileNodes().empty() && node->subFolderNodes().empty());
+
     QString dirPath = realDir(node).toString();
 
     fsWatcher_->addPath(dirPath);
