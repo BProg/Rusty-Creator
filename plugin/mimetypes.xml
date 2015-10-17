@@ -1,20 +1,40 @@
 <?xml version="1.0"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+
+    <!--
+    It is important that `type` matches the `mimetype` attribute in the
+    toml.xml highlight file
+    -->
     <mime-type type="text/x-toml">
         <sub-class-of type="text/plain"/>
         <comment>TOML configuration file</comment>
         <glob pattern="*.toml"/>
     </mime-type>
+
+    <!--
+    I made up this type for the occasion.
+    http://doc.crates.io/manifest.html
+    -->
     <mime-type type="text/x-cargo.toml">
         <sub-class-of type="text/x-toml"/>
         <comment>Cargo manifest file</comment>
         <glob pattern="Cargo.toml"/>
     </mime-type>
+
+    <!--
+    I made up this type for the occasion.
+    http://doc.crates.io/guide.html#cargotoml-vs-cargolock
+    -->
     <mime-type type="text/x-cargo.lock">
         <sub-class-of type="text/x-toml"/>
         <comment>Cargo lock file</comment>
         <glob pattern="Cargo.lock"/>
     </mime-type>
+
+    <!--
+    I made up this type for the occasion.
+    http://doc.crates.io/config.html
+    -->
     <mime-type type="text/x-cargo.manifest">
         <sub-class-of type="text/x-toml"/>
         <comment>Cargo configuration file</comment>
@@ -23,4 +43,5 @@
             <treematch path=".cargo" />
         </treemagic>
     </mime-type>
+
 </mime-info>
