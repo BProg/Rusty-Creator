@@ -5,6 +5,8 @@
 
 namespace Rust {
 
+/// Needed by `RustToolChain::outputParser`
+///
 class RustOutputParser : public ProjectExplorer::IOutputParser
 {
 public:

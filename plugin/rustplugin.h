@@ -7,6 +7,8 @@
 
 namespace Rust {
 
+/// The entry point in QtCreator's extension system.
+///
 class RustPlugin : public ExtensionSystem::IPlugin
 {
   Q_OBJECT

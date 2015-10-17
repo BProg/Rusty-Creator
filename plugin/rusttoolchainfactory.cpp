@@ -9,6 +9,9 @@ namespace Rust {
 
 RustToolChainFactory::RustToolChainFactory()
 {
+    // This name appears in the 'Tools/Options/Build&Run/Compilers' options
+    // tab, in the list that appears when the "Add" button is clicked.
+    //
     setDisplayName(QString::fromLatin1("Rust"));
 }
 

@@ -9,6 +9,11 @@ namespace Rust {class CargoProject;}
 
 namespace Rust {
 
+/// Not sure what the purpose of this class is.
+///
+/// I created it because `CargoProject::document` needs to return an
+/// `IDocument`.
+///
 class CargoProjectFile : public Core::IDocument
 {
     Q_OBJECT

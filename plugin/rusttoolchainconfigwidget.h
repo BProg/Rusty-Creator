@@ -8,6 +8,10 @@ namespace ProjectExplorer { class ToolChain; }
 
 namespace Rust {
 
+/// The widget that appears at the bottom of the
+/// 'Tools/Options/Build&Run/Compilers' options tab, used to configure one
+/// `RustToolChain` instance.
+///
 class RustToolChainConfigWidget : public ProjectExplorer::ToolChainConfigWidget
 {
     Q_OBJECT

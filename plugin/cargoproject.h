@@ -12,6 +12,8 @@ namespace Rust { class CargoProjectFile; }
 
 namespace Rust {
 
+/// Represents one entry in the "Projects" navigator view.
+///
 class CargoProject : public ProjectExplorer::Project
 {
     Q_OBJECT

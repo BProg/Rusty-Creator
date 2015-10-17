@@ -5,11 +5,24 @@
 
 namespace Rust {
 
+/// Represents one compiler with its configuration.
+///
+/// Instances of this class can be created and modified in the
+/// 'Tools/Options/Build&Run/Compilers' option tab, and can be selected in the
+/// 'Tools/Options/Build&Run/Kits' options tab. They will be used in build step
+/// configurations of Cargo commands, to choose the compiler used and to pass
+/// options to it.
+///
 class RustToolChain : public ProjectExplorer::ToolChain
 {
 public:
     RustToolChain();
 
+    /// See https://doc.rust-lang.org/book/release-channels.html
+    ///
+    /// Unofficial means that the compiler does not come from an official
+    /// release channel.
+    ///
     enum ReleaseChannel {
         ChannelStable = 0,
         ChannelBeta = 1,
@@ -37,6 +50,9 @@ public:
     virtual ProjectExplorer::ToolChain* clone() const override;
 
 private:
+
+    /// This is mostly informative.
+    ///
     ReleaseChannel releaseChannel_;
 };
 
