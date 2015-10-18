@@ -5,6 +5,7 @@
 #include <projectexplorer/abi.h>
 #include <projectexplorer/headerpath.h>
 #include <utils/fileutils.h>
+#include <utils/environment.h>
 
 using namespace ProjectExplorer;
 using namespace Utils;
