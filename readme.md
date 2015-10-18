@@ -128,3 +128,10 @@ the following enhancements:
 * In the Projects view, a Cargo-based project shows the content of the
   directory where `Cargo.toml` lives, and all its subdirectories. Also, any
   change on the filesystem is reflected automatically in this tree.
+
+* Work in progress: auto-detection and manual creation of Rust compilers, in the
+  'Build&Run/Compilers' options tab
+
+## Guide for the contributors
+
+There is a technical overview of the project in [overview.md](dev-doc/overview.md).
