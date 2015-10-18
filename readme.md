@@ -65,9 +65,11 @@ used for building open source projects).
 
 This is an example of setup:
 
-1. Download and install MSVC 2015
-2. Download the sources of Qt 5.5.0
-3. Compile Qt
+1) Download and install MSVC 2015
+
+2) Download the sources of Qt 5.5.0
+
+3) Compile Qt
 
 ```
 CALL "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
@@ -76,21 +78,22 @@ SET PATH=C:\path-to-qt-sources\gnuwin32\bin;%PATH%
 nmake
 ```
 
-4. Add the newly compiled Qt `bin` directory to your path
+4) Add the newly compiled Qt `bin` directory to your path
 
 ```
 SET PATH=C:\path-to-qt-sources\bin;%PATH%
 ```
 
-5. Clone this project
-6. Go in the `qt-creator` subdirectory, and compile it
+5) Clone this project
+
+6) Go in the `qt-creator` subdirectory, and compile it
 
 ```
 qmake
 nmake
 ```
 
-7. Go in the `plugin` subdirectory, compile
+7) Go in the `plugin` subdirectory, compile
 
 ```
 qmake
@@ -98,11 +101,13 @@ nmake
 nmake highlights
 ```
 
-8. Run QtCreator, located at `qt-creator/bin/qtcreator.exe`
-9. To checked that the plugin loaded correctly, click on `Help/About plugins`,
+8) Run QtCreator, located at `qt-creator/bin/qtcreator.exe`
+
+9) To checked that the plugin loaded correctly, click on `Help/About plugins`,
    and see if the `Rust` plugin appears in the "Other Languages" section, and
    is checked.
-10. Congratulations! You can now hack some code and send me pull requests!
+
+10) Congratulations! You can now hack some code and send me pull requests!
 
 ## Current state of the project
 
@@ -112,14 +117,14 @@ the following enhancements:
 * CI integration using Appveyor, that generates a Windows installer on hg push.
 
 * Syntax highlight based on the Kate format:
-  * Rust (`*.rs`): it's a cheap way to provide syntax highlight for now
-  * Markdown (`*.md`, `*.mmd`, `*.markdown`): often used for readme files
-  * Toml (`*.toml`, `Cargo.lock`, `.cargo/config`): used by Cargo
-  * Yaml (`*.yml`, `*.yaml`): used for Travis CI and Appveyor CI configuration
-  * Json (`*.json`): 'cause it's popular
+    * Rust (`*.rs`): it's a cheap way to provide syntax highlight for now
+    * Markdown (`*.md`, `*.mmd`, `*.markdown`): often used for readme files
+    * Toml (`*.toml`, `Cargo.lock`, `.cargo/config`): used by Cargo
+    * Yaml (`*.yml`, `*.yaml`): used for Travis CI and Appveyor CI configuration
+    * Json (`*.json`): 'cause it's popular
 
-  Note that I just integrated existing Kate syntax highlight files, I didn't
-  write any of them.
+    Note that I just integrated existing Kate syntax highlight files, I didn't
+    write any of them.
 
 * Cargo project files (`Cargo.toml`) are supported as QtCreator project files.
   This means that in `File/Open File of Project`, the user can choose a
