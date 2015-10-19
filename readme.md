@@ -140,3 +140,48 @@ the following enhancements:
 ## Guide for the contributors
 
 There is a technical overview of the project in [overview.md](dev-doc/overview.md).
+
+## Candidate features list
+
+ ✓✓ = complete support
+ ✓ = partial support
+ ⋯ = work in progress
+ (empty) = not started
+
+| State | Feature                                                      |
+|-------|--------------------------------------------------------------|
+| ✓✓    | Interpret `Cargo.toml` files as QtCreator project file       |
+| ✓✓    | Synchronize the project tree with the filesystem content     |
+| ✓✓    | Add generic syntax highlight support                         |
+| ✓✓    | Integrate with a Windows CI service (Appveyor)               |
+| ✓     | Add `rustc` in the list of compilers                         |
+|       | Integrate with a MacOS CI service                            |
+|       | Integrate with a Linux CI service                            |
+|       | Autodetect `rustc` compilers on the system                   |
+|       | Add Cargo as a new build tool                                |
+|       | Autodetect `cargo` tools on the system                       |
+|       | Add Cargo-specific build step                                |
+|       | Add Cargo-specific run step                                  |
+|       | Add Cargo-specific deploy step                               |
+|       | Auto-generate targets for example bins                       |
+|       | Integrate unit tests and benches                             |
+|       | Add either an autodetected kit or a default one              |
+|       | Add common code snippets                                     |
+|       | Support for cross compilation                                |
+|       | Real syntax highlight                                        |
+|       | Basic text manipulation: auto-close parens, split strings... |
+|       | Proper code indentation, based on Rust conventions           |
+|       | Customize default code style to match Rust conventions       |
+|       | Decorate project/files with the Rust icon!                   |
+|       | Provide a more Rusty theme for the UI!                       |
+|       | Debugger support                                             |
+|       | Code navigation                                              |
+|       | Code completion                                              |
+|       | find symbols using the Locator                               |
+|       | Parse compiler output                                        |
+|       | Integrate lints/Clippy, possibly using a QuickFix suggestion |
+|       | Handle Cargo sub-projects                                    |
+|       | Display/open crate dependencies                              |
+|       | UI or autocompletion to work with the Cargo.toml file        |
+|       | Inline documentation                                         |
+|       | Various wizards                                              |
