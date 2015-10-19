@@ -143,10 +143,10 @@ There is a technical overview of the project in [overview.md](dev-doc/overview.m
 
 ## Candidate features list
 
- ✓✓ = complete support
- ✓ = partial support
- ⋯ = work in progress
- (empty) = not started
+- ✓✓ = complete support
+- ✓ = partial support
+- ⋯ = work in progress
+- (empty) = not started
 
 | State | Feature                                                      |
 |-------|--------------------------------------------------------------|
