@@ -3,7 +3,7 @@
 #include "rusttoolchain.h"
 
 #include <QComboBox>
-#include <QFormlayout>
+#include <QFormLayout>
 
 using namespace ProjectExplorer;
 using ReleaseChannel = Rust::RustToolChain::ReleaseChannel;
