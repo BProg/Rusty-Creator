@@ -20,7 +20,7 @@ class CargoProject : public ProjectExplorer::Project
 
 public:
     CargoProject(CargoProjectManager* projectManager, QString projectFileName);
-
+    ~CargoProject();
     // ProjectExplorer::Project interface
     virtual QString displayName() const override;
     virtual Core::IDocument* document() const override;
@@ -29,6 +29,7 @@ public:
     virtual QStringList files(FilesMode fileMode) const override;
 
 private:
+    Q_DISABLE_COPY(CargoProject);
     CargoProjectManager* projectManager_;
     QString projectFileName_;
     QScopedPointer<CargoProjectNode> rootNode_;

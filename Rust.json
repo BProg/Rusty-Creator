@@ -1,0 +1,16 @@
+{
+    "Name" : "Rust",
+    "Version" : "3.5.0",
+    "CompatVersion" : "3.5.0",
+    "Vendor" : "Olivier Renaud",
+    "Copyright" : "(C) 2015 Olivier Renaud",
+    "License" : "MIT",
+    "Category" : "Other Languages",
+    "Description" : "Rust language support",
+    "Url" : "https://bitbucket.org/olivren/rustycreator",
+    "Dependencies" : [
+        { "Name" : "Core", "Version" : "3.5.0" },
+        { "Name" : "ProjectExplorer", "Version" : "3.5.0" }
+    ]
+}
+

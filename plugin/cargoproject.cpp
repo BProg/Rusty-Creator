@@ -46,3 +46,6 @@ QStringList CargoProject::files(ProjectExplorer::Project::FilesMode fileMode) co
     // STUB
     return QStringList();
 }
+
+
+CargoProject::~CargoProject() {}

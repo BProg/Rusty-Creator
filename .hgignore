@@ -8,3 +8,9 @@ install
 env.bat
 build*
 plugin/Rust.json
+*build*
+*.moc
+*.obj
+*.qmake*
+*.rcc*
+*.DS_Store
