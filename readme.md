@@ -109,6 +109,32 @@ nmake highlights
 
 10) Congratulations! You can now hack some code and send me pull requests!
 
+## Building on OS X
+
+1) Open terminal and type
+```
+xcode-select --install
+```
+2) Download QT community edition
+3) Clone this project
+4) Go to rustycreator subdirectory (QT recomends to create shadow builds)
+```
+mkdir qt-creator-build ; cd qt-creator-build
+path/to/QTCommunity/{QT-version}/clang_64/bin/qmake -r ../qt-creator
+make
+```
+5) Go to plugin directory
+```
+path/to/QTCommunity/{QT-version}/clang_64/bin/qmake
+make 
+make highlights
+```
+6) Run qt creator located at `qt-creator-build/bin/qtcreator`
+7) To checked that the plugin loaded correctly, click on `Help/About plugins`,
+   and see if the `Rust` plugin appears in the "Other Languages" section, and
+   is checked.
+8) Congratulations! You can now hack some code and send me pull requests!
+
 ## Current state of the project
 
 RustyCreator contains exactly the same features as QtCreator opensource, plus
