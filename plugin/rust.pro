@@ -62,7 +62,8 @@ QTC_PLUGIN_RECOMMENDS += \
 include($$QTCREATOR_SOURCES/src/qtcreatorplugin.pri)
 
 DISTFILES += \
-    mimetypes.xml
+    mimetypes.xml \
+    ../dev-doc/classes-uml-diagram.qmodel
 
 RESOURCES += \
     Rust.qrc
