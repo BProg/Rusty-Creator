@@ -167,7 +167,7 @@ There is a technical overview of the project in [overview.md](dev-doc/overview.m
 |       | Integrate unit tests and benches                             |
 |       | Add either an autodetected kit or a default one              |
 |       | Add common code snippets                                     |
-|       | Support for cross compilation                                |
+| ✓     | Support for cross compilation                                |
 |       | Real syntax highlight                                        |
 |       | Basic text manipulation: auto-close parens, split strings... |
 |       | Proper code indentation, based on Rust conventions           |
