@@ -1,4 +1,4 @@
-#include "cargoprojectnode.h"
+ #include "cargoprojectnode.h"
 
 #include <QFileInfo>
 #include <QDir>

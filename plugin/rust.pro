@@ -10,7 +10,8 @@ SOURCES += rustplugin.cpp \
     rusttoolchainfactory.cpp \
     rusttoolchain.cpp \
     rustoutputparser.cpp \
-    rusttoolchainconfigwidget.cpp
+    rusttoolchainconfigwidget.cpp \
+    toolautofinder.cpp
 
 HEADERS += rustplugin.h \
         rust_global.h \
@@ -22,7 +23,8 @@ HEADERS += rustplugin.h \
     rusttoolchainfactory.h \
     rusttoolchain.h \
     rustoutputparser.h \
-    rusttoolchainconfigwidget.h
+    rusttoolchainconfigwidget.h \
+    toolautofinder.h
 
 # Qt Creator linking
 

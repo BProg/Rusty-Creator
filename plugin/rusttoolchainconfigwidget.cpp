@@ -1,9 +1,11 @@
 #include "rusttoolchainconfigwidget.h"
 
 #include "rusttoolchain.h"
+#include "toolautofinder.h"
 
 #include <QComboBox>
 #include <QFormLayout>
+#include <QLineEdit>
 
 using namespace ProjectExplorer;
 using ReleaseChannel = Rust::RustToolChain::ReleaseChannel;
@@ -24,6 +26,11 @@ RustToolChainConfigWidget::RustToolChainConfigWidget(ToolChain* toolChain)
                                   RustToolChain::ChannelUnofficial);
     m_mainLayout->addRow(QString::fromLatin1("Release Channel"),
                          releaseChannelCombo_);
+    m_mainLayout->addRow(QString::fromLatin1("rustc path"),
+                         new QLineEdit(ToolAutoFinder::findRustcTool()));
+    m_mainLayout->addRow(QString::fromLatin1("cargo path"),
+                         new QLineEdit(ToolAutoFinder::findCargoTool()));
+
 }
 
 

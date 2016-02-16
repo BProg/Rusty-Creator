@@ -50,7 +50,7 @@
                          <object>{1df30b4f-0979-4793-ad40-b16c845c7171}</object>
                          <name>CargoProject</name>
                          <pos>x:560;y:300</pos>
-                         <rect>x:-40;y:-30;w:80;h:60</rect>
+                         <rect>x:-45;y:-30;w:90;h:60</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -191,7 +191,7 @@
                          <object>{021b5576-84d9-4a6a-9d8f-a44baa91a41b}</object>
                          <name>RustToolChainFactory</name>
                          <pos>x:320;y:635</pos>
-                         <rect>x:-65;y:-30;w:130;h:60</rect>
+                         <rect>x:-70;y:-30;w:140;h:60</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -866,9 +866,53 @@
                       </DInheritance>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{93fae41b-d9e4-4ee5-be93-10fd6e12450c}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{69a18ae0-b5bb-4a8f-b529-e490dc530f35}</object>
+                         <name>ToolAutoFinder</name>
+                         <pos>x:855;y:770</pos>
+                         <rect>x:-50;y:-30;w:100;h:60</rect>
+                         <visual-role>6</visual-role>
+                        </DObject>
+                       </base-DObject>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{0d4aad4c-7110-43ee-966a-d166b0e15acb}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{1fe38a6e-2b58-4b9a-860d-9f14532c1d45}</object>
+                         <a>{7aec3ddd-33ed-44ce-b4fe-acf7a3adc903}</a>
+                         <b>{93fae41b-d9e4-4ee5-be93-10fd6e12450c}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1455105680054</last-modified>
+                  <last-modified>1455656739718</last-modified>
                  </MDiagram>
                 </base-MDiagram>
                </MCanvasDiagram>
@@ -1641,6 +1685,34 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{1fe38a6e-2b58-4b9a-860d-9f14532c1d45}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{1fe38a6e-2b58-4b9a-860d-9f14532c1d45}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{da2d1aa6-9dc7-429f-a79e-d333ba85d57b}</a>
+                             <b>{69a18ae0-b5bb-4a8f-b529-e490dc530f35}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -1863,6 +1935,27 @@
                  </MObject>
                 </base-MObject>
                 <namespace>ProjectExplorer</namespace>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{69a18ae0-b5bb-4a8f-b529-e490dc530f35}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{69a18ae0-b5bb-4a8f-b529-e490dc530f35}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ToolAutoFinder</name>
+                 </MObject>
+                </base-MObject>
                </MClass>
               </instance>
              </target>

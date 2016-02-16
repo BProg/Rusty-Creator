@@ -14,3 +14,4 @@ plugin/Rust.json
 *.qmake*
 *.rcc*
 *.DS_Store
+*.directory
