@@ -2,8 +2,11 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/23dpy079mn75c50v?svg=true)](https://ci.appveyor.com/project/olivren/rustycreator)
 
-This is a plugin for *QtCreator* (my C++ IDE of choice), to support the *Rust*
+This is a plugin for *QtCreator* to support the *Rust*
 programming language.
+
+This project was started by Olivier Renaud, his original project can be found
+int he bitbucket : https://bitbucket.org/olivren/rustycreator
 
 **This project is in its very early stage**. It is not yet useful for anyone,
 for now I focused on setting things up correctly.
@@ -26,10 +29,10 @@ already enough to occupy my somewhat limited free time for a very long period!
 ## Target Platforms
 
 QtCreator itself is multi-platform. My current main development machine is a
-*Windows 7 64 bits*, and thus it's what I use for this project. There is of
-course nothing Windows-specific on this project, so this should work *anywhere
-QtCreator can run*. The project is based on QtCreator 3.5.0 (open source
-version).
+*Windows 10 64 bits*, *Solus-Project (EvolveOS)*, and thus it's what I use for this project.
+There is of course nothing Windows-specific on this project, so this should
+work *anywhere QtCreator can run*. The project is based on QtCreator 3.5.0
+(open source version).
 
 ## Continuous integration
 
@@ -39,12 +42,13 @@ plugin on Windows using MSVC 2013 and Qt 5.5, targeting x86 processors. The
 results of these builds are available as executable installers. Click the
 "build" button located at the top of this document, and click on the
 "artifacts" link to access the zip.
+Appveyor is failing now, and I will remove it totatly.
 
 ## Organization of the repository
 
 This project consists of
 
-1. `qt-creator`, a Hg subrepository that points to the Git QtCreator
+1. `qt-creator`, a git/Hg subrepository that points to the Git QtCreator
    repository, on the v3.5.0 tag.
 2. `dev-doc`, some developers-oriented docs.
 3. `plugin`, a QtCreator plugin project.
@@ -183,7 +187,7 @@ There is a technical overview of the project in [overview.md](dev-doc/overview.m
 | ✓     | Add `rustc` in the list of compilers                         |
 |       | Integrate with a MacOS CI service                            |
 |       | Integrate with a Linux CI service                            |
-|       | Autodetect `rustc` compilers on the system                   |
+| ✓     | Autodetect `rustc` compilers on the system                   |
 |       | Add Cargo as a new build tool                                |
 |       | Autodetect `cargo` tools on the system                       |
 |       | Add Cargo-specific build step                                |
@@ -193,7 +197,7 @@ There is a technical overview of the project in [overview.md](dev-doc/overview.m
 |       | Integrate unit tests and benches                             |
 |       | Add either an autodetected kit or a default one              |
 |       | Add common code snippets                                     |
-| ✓     | Support for cross compilation                                |
+|       | Support for cross compilation                                |
 |       | Real syntax highlight                                        |
 |       | Basic text manipulation: auto-close parens, split strings... |
 |       | Proper code indentation, based on Rust conventions           |
@@ -211,3 +215,4 @@ There is a technical overview of the project in [overview.md](dev-doc/overview.m
 |       | UI or autocompletion to work with the Cargo.toml file        |
 |       | Inline documentation                                         |
 |       | Various wizards                                              |
+|-------|--------------------------------------------------------------|
