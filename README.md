@@ -54,7 +54,78 @@ configured so that they install themselves in the QtCreator build directory.
 
 ## Building the project
 
-### Building on Windows
+### Building on Linux(Debian 8)
+
+1) Insall **basic requirements for building Qt applications**.
+*Tested only on Debian 8*, but for other distros you can try:
+
+**Debian/Ubuntu (apt-get)**
+```sh
+sudo apt-get install build-essential libgl1-mesa-dev
+```
+**Fedora/RHEL/CentOS (yum)**
+```sh
+sudo yum groupinstall "C Development Tools and Libraries"
+sudo yum install mesa-libGL-devel
+```
+**openSUSE (zypper)**
+```sh
+sudo zypper install -t pattern devel_basis
+```
+
+2) Download and install [QT Community](http://www.qt.io/download/). *At this moment 5.5 version is needed*
+
+3) Clone this project
+
+4) Go to Rusty-Creator subdirectory (QT recomends to create shadow builds)
+
+```sh
+mkdir qt-creator-build ; cd qt-creator-build
+path/to/QTCommunity/{QT-version}/{Compiler-Version}/bin/qmake -r ../qt-creator
+make
+```
+5) Go to Rusty-Creator/plugin directory
+
+```sh
+path/to/QTCommunity/{QT-version}/{Compiler-Version}/bin/qmake
+make 
+make highlights
+```
+
+### Building on OS X
+
+1) Open terminal and type
+
+```sh
+xcode-select --install
+```
+2) Download and install [QT Community](http://www.qt.io/download/). *At this moment 5.5 version is needed*
+
+3) Clone this project
+
+4) Go to Rusty-Creator subdirectory (QT recomends to create shadow builds)
+
+```sh
+mkdir qt-creator-build ; cd qt-creator-build
+path/to/QTCommunity/{QT-version}/clang_64/bin/qmake -r ../qt-creator
+make
+````
+5) Go  to Rusty-Creator/plugin directory
+
+```sh
+path/to/QTCommunity/{QT-version}/clang_64/bin/qmake
+make 
+make highlights
+```
+6) Run qt creator located at `qt-creator-build/bin/qtcreator`
+
+7) To check that the plugin loaded correctly, click on `Help/About plugins`,
+   and see if the `Rust` plugin appears in the "Other Languages" section, and
+   is checked.
+   
+8) Congratulations! You can now hack some code and send me pull requests!
+
+### Building on Windows (_not tested by me_)
 
 To avoid a lot of headaches, it is recommended to use the same compiler for all
 the software stack. So, Qt, QtCreator and the plugin should be compiled with
@@ -70,7 +141,7 @@ This is an example of setup:
 
 3) Compile Qt
 
-```
+```bat
 CALL "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
 SET PATH=C:\path-to-qt-sources\gnuwin32\bin;%PATH%
 .\configure -platform win32-msvc2015 -debug-and-release -opensource -c++11 -confirm-license
@@ -79,7 +150,7 @@ nmake
 
 4) Add the newly compiled Qt `bin` directory to your path
 
-```
+```bat
 SET PATH=C:\path-to-qt-sources\bin;%PATH%
 ```
 
@@ -87,14 +158,14 @@ SET PATH=C:\path-to-qt-sources\bin;%PATH%
 
 6) Go in the `qt-creator` subdirectory, and compile it
 
-```
+```bat
 qmake
 nmake
 ```
 
 7) Go in the `plugin` subdirectory, compile
 
-```
+```bat
 qmake
 nmake
 nmake highlights
@@ -102,44 +173,11 @@ nmake highlights
 
 8) Run QtCreator, located at `qt-creator/bin/qtcreator.exe`
 
-9) To checked that the plugin loaded correctly, click on `Help/About plugins`,
+9) To check that the plugin loaded correctly, click on `Help/About plugins`,
    and see if the `Rust` plugin appears in the "Other Languages" section, and
    is checked.
 
 10) Congratulations! You can now hack some code and send me pull requests!
-
-### Building on OS X
-
-1) Open terminal and type
-
-```
-xcode-select --install
-```
-2) Download QT community edition
-
-3) Clone this project
-
-4) Go to rustycreator subdirectory (QT recomends to create shadow builds)
-
-````
-mkdir qt-creator-build ; cd qt-creator-build
-path/to/QTCommunity/{QT-version}/clang_64/bin/qmake -r ../qt-creator
-make
-````
-5) Go to plugin directory
-
-```
-path/to/QTCommunity/{QT-version}/clang_64/bin/qmake
-make 
-make highlights
-```
-6) Run qt creator located at `qt-creator-build/bin/qtcreator`
-
-7) To check that the plugin loaded correctly, click on `Help/About plugins`,
-   and see if the `Rust` plugin appears in the "Other Languages" section, and
-   is checked.
-   
-8) Congratulations! You can now hack some code and send me pull requests!
 
 ## Current state of the project
 
