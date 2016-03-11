@@ -1,12 +1,11 @@
 # RustyCreator
 
-[![Build status](https://ci.appveyor.com/api/projects/status/23dpy079mn75c50v?svg=true)](https://ci.appveyor.com/project/olivren/rustycreator)
 
 This is a plugin for *QtCreator* to support the *Rust*
 programming language.
 
 This project was started by Olivier Renaud, his original project can be found
-int he bitbucket : https://bitbucket.org/olivren/rustycreator
+in the [bitbucket](https://bitbucket.org/olivren/rustycreator)
 
 **This project is in its very early stage**. It is not yet useful for anyone,
 for now I focused on setting things up correctly.
@@ -29,20 +28,14 @@ already enough to occupy my somewhat limited free time for a very long period!
 ## Target Platforms
 
 QtCreator itself is multi-platform. My current main development machine is a
-*Windows 10 64 bits*, *Solus-Project (EvolveOS)*, and thus it's what I use for this project.
+*Windows 10 x64*, *Debian 8 x64 stable*, and thus it's what I use for this project.
 There is of course nothing Windows-specific on this project, so this should
 work *anywhere QtCreator can run*. The project is based on QtCreator 3.5.0
 (open source version).
 
 ## Continuous integration
 
-This repository is built using *Appveyor CI*. You can find the full
-configuration for it in the `appveyor.yml` file. It builds QtCreator and the
-plugin on Windows using MSVC 2013 and Qt 5.5, targeting x86 processors. The
-results of these builds are available as executable installers. Click the
-"build" button located at the top of this document, and click on the
-"artifacts" link to access the zip.
-Appveyor is failing now, and I will remove it totatly.
+Just thinking of integrating with jenkins.
 
 ## Organization of the repository
 
@@ -60,6 +53,8 @@ sources of QtCreator (`../qt-creator`). Also, QtCreator plugins are by default
 configured so that they install themselves in the QtCreator build directory.
 
 ## Building the project
+
+### Building on Windows
 
 To avoid a lot of headaches, it is recommended to use the same compiler for all
 the software stack. So, Qt, QtCreator and the plugin should be compiled with
@@ -113,30 +108,37 @@ nmake highlights
 
 10) Congratulations! You can now hack some code and send me pull requests!
 
-## Building on OS X
+### Building on OS X
 
 1) Open terminal and type
+
 ```
 xcode-select --install
 ```
 2) Download QT community edition
+
 3) Clone this project
+
 4) Go to rustycreator subdirectory (QT recomends to create shadow builds)
-```
+
+````
 mkdir qt-creator-build ; cd qt-creator-build
 path/to/QTCommunity/{QT-version}/clang_64/bin/qmake -r ../qt-creator
 make
-```
+````
 5) Go to plugin directory
+
 ```
 path/to/QTCommunity/{QT-version}/clang_64/bin/qmake
 make 
 make highlights
 ```
 6) Run qt creator located at `qt-creator-build/bin/qtcreator`
-7) To checked that the plugin loaded correctly, click on `Help/About plugins`,
+
+7) To check that the plugin loaded correctly, click on `Help/About plugins`,
    and see if the `Rust` plugin appears in the "Other Languages" section, and
    is checked.
+   
 8) Congratulations! You can now hack some code and send me pull requests!
 
 ## Current state of the project
@@ -144,7 +146,6 @@ make highlights
 RustyCreator contains exactly the same features as QtCreator opensource, plus
 the following enhancements:
 
-* CI integration using Appveyor, that generates a Windows installer on hg push.
 
 * Syntax highlight based on the Kate format:
     * Rust (`*.rs`): it's a cheap way to provide syntax highlight for now
@@ -215,4 +216,3 @@ There is a technical overview of the project in [overview.md](dev-doc/overview.m
 |       | UI or autocompletion to work with the Cargo.toml file        |
 |       | Inline documentation                                         |
 |       | Various wizards                                              |
-|-------|--------------------------------------------------------------|
