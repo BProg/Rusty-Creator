@@ -28,8 +28,6 @@ RustToolChainConfigWidget::RustToolChainConfigWidget(ToolChain* toolChain)
                          releaseChannelCombo_);
     m_mainLayout->addRow(QString::fromLatin1("rustc path"),
                          new QLineEdit(ToolAutoFinder::findRustcTool()));
-    m_mainLayout->addRow(QString::fromLatin1("cargo path"),
-                         new QLineEdit(ToolAutoFinder::findCargoTool()));
 
 }
 
