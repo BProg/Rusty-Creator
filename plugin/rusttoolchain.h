@@ -34,7 +34,7 @@ public:
     ReleaseChannel releaseChannel();
 
     // ProjectExplorer::ToolChain interface
-    virtual QString type() const override;
+    QString displayName() const;
     virtual QString typeDisplayName() const override;
     virtual ProjectExplorer::Abi targetAbi() const override;
     virtual bool isValid() const override;

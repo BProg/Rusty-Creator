@@ -13,7 +13,7 @@ using namespace Utils;
 namespace Rust {
 
 RustToolChain::RustToolChain()
-    : ToolChain(QString::fromLatin1("RustToolChainId"), ToolChain::ManualDetection)
+    : ToolChain(Core::Id("RustToolChainId"), ToolChain::ManualDetection)
 {
     setDisplayName(QString::fromLatin1("Rust Compiler"));
 }
@@ -28,7 +28,7 @@ RustToolChain::ReleaseChannel RustToolChain::releaseChannel()
     return releaseChannel_;
 }
 
-QString RustToolChain::type() const
+QString RustToolChain::displayName() const
 {
     return QString::fromLatin1("rustc");
 }

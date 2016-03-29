@@ -21,7 +21,7 @@ public:
     RustToolChainFactory();
 
     // ProjectExplorer::ToolChainFactory interface
-    virtual QList<ProjectExplorer::ToolChain*> autoDetect() override;
+    virtual QList<ProjectExplorer::ToolChain*> autoDetect(const QList<ProjectExplorer::ToolChain *> &alreadyKnown) override;
     virtual bool canCreate() override;
     virtual ProjectExplorer::ToolChain* create() override;
     virtual bool canRestore(const QVariantMap& data) override;

@@ -15,10 +15,10 @@ RustToolChainFactory::RustToolChainFactory()
     setDisplayName(QString::fromLatin1("Rust"));
 }
 
-QList<ToolChain*> RustToolChainFactory::autoDetect()
+QList<ToolChain*> RustToolChainFactory::autoDetect(const QList<ToolChain *> &alreadyKnown)
 {
     // STUB
-    return QList<ToolChain*>();
+    return alreadyKnown;
 }
 
 bool RustToolChainFactory::canCreate()
