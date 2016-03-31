@@ -7,6 +7,7 @@
 
 #include "cargoprojectmanager.h"
 #include "rusttoolchainfactory.h"
+#include "ProjectExplorer_Build/rustbuildconfigurationfactory.h"
 
 using namespace Rust;
 
@@ -37,6 +38,7 @@ bool RustPlugin::initialize(const QStringList &arguments, QString *errorString)
 
     addAutoReleasedObject(new CargoProjectManager);
     addAutoReleasedObject(new RustToolChainFactory);
+    addAutoReleasedObject(new RustBuildConfigurationFactory);
 
     return true;
 }

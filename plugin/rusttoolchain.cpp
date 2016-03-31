@@ -7,6 +7,8 @@
 #include <utils/fileutils.h>
 #include <utils/environment.h>
 
+#include "toolautofinder.h"
+
 using namespace ProjectExplorer;
 using namespace Utils;
 
@@ -96,7 +98,8 @@ QString RustToolChain::makeCommand(const Environment& env) const
 FileName RustToolChain::compilerCommand() const
 {
     // STUB
-    return FileName::fromString(QString::fromLatin1(R"(C:\Program Files\Rust stable 1.1\bin\rustc.exe)"));
+    // return FileName::fromString(QString::fromLatin1(R"(C:\Program Files\Rust stable 1.1\bin\rustc.exe)"));
+    return FileName::fromString(ToolAutoFinder::findRustcTool());
 }
 
 IOutputParser* RustToolChain::outputParser() const

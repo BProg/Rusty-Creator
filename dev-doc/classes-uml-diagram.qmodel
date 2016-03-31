@@ -145,8 +145,9 @@
                           </qlist>
                          </stereotypes>
                          <name>IPlugin</name>
-                         <pos>x:100;y:360</pos>
+                         <pos>x:95;y:360</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
+                         <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -707,7 +708,7 @@
                           </qlist>
                          </stereotypes>
                          <name>ToolChainFactory</name>
-                         <pos>x:320;y:530</pos>
+                         <pos>x:320;y:555</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
@@ -751,7 +752,7 @@
                           </qlist>
                          </stereotypes>
                          <name>ToolChain</name>
-                         <pos>x:490;y:535</pos>
+                         <pos>x:490;y:550</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
@@ -795,7 +796,7 @@
                           </qlist>
                          </stereotypes>
                          <name>IOutputParser</name>
-                         <pos>x:670;y:500</pos>
+                         <pos>x:670;y:510</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
@@ -839,7 +840,7 @@
                           </qlist>
                          </stereotypes>
                          <name>ToolChainConfigWidget</name>
-                         <pos>x:695;y:670</pos>
+                         <pos>x:695;y:690</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
@@ -912,7 +913,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1455656739718</last-modified>
+                  <last-modified>1459365563956</last-modified>
                  </MDiagram>
                 </base-MDiagram>
                </MCanvasDiagram>

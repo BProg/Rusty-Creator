@@ -11,7 +11,11 @@ SOURCES += rustplugin.cpp \
     rusttoolchain.cpp \
     rustoutputparser.cpp \
     rusttoolchainconfigwidget.cpp \
-    toolautofinder.cpp
+    toolautofinder.cpp \
+    rustruncontrol.cpp \
+    rustrunconfiguration.cpp \
+    ProjectExplorer_Build/rustbuildconfiguration.cpp \
+    ProjectExplorer_Build/rustbuildconfigurationfactory.cpp
 
 HEADERS += rustplugin.h \
         rust_global.h \
@@ -24,7 +28,11 @@ HEADERS += rustplugin.h \
     rusttoolchain.h \
     rustoutputparser.h \
     rusttoolchainconfigwidget.h \
-    toolautofinder.h
+    toolautofinder.h \
+    rustruncontrol.h \
+    rustrunconfiguration.h \
+    ProjectExplorer_Build/rustbuildconfiguration.h \
+    ProjectExplorer_Build/rustbuildconfigurationfactory.h
 
 # Qt Creator linking
 

@@ -8,7 +8,7 @@ install
 env.bat
 build*
 plugin/Rust.json
-*build*
+qt-creator-build
 *.moc
 *.obj
 *.qmake*
