@@ -73,7 +73,8 @@ include($$QTCREATOR_SOURCES/src/qtcreatorplugin.pri)
 
 DISTFILES += \
     mimetypes.xml \
-    ../dev-doc/classes-uml-diagram.qmodel
+    ../dev-doc/classes-uml-diagram.qmodel \
+    Rust.json
 
 RESOURCES += \
     Rust.qrc

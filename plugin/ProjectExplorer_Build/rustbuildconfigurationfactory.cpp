@@ -1,5 +1,6 @@
 #include "rustbuildconfigurationfactory.h"
 #include "rustbuildconfiguration.h"
+#include "projectexplorer/buildinfo.h"
 
 RustBuildConfigurationFactory::RustBuildConfigurationFactory()
 {
@@ -13,6 +14,8 @@ int RustBuildConfigurationFactory::priority(const Target *parent) const
 
 QList<BuildInfo *> RustBuildConfigurationFactory::availableBuilds(const Target *parent) const
 {
+    QList<BuildInfo*> builds;
+    builds.append(new BuildInfo(this));
     return QList<BuildInfo*>();
 }
 

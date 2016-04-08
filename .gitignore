@@ -7,7 +7,6 @@ plugin/release
 install
 env.bat
 build*
-plugin/Rust.json
 qt-creator-build
 *.moc
 *.obj

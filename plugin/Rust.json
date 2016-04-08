@@ -1,0 +1,16 @@
+{
+    "Name" : "Rust",
+    "Version" : "3.6.1",
+    "CompatVersion" : "3.6.0",
+    "Vendor" : "Ion Ostafi, Olivier Renaud",
+    "Copyright" : "(C) 2015 Ion Ostafi, Olivier Renaud",
+    "License" : "MIT",
+    "Category" : "Other Languages",
+    "Description" : "Rust language support",
+    "Url" : "https://github.com/BProg/Rusty-Creator",
+    "Dependencies" : [
+        { "Name" : "Core", "Version" : "3.6.1" },
+        { "Name" : "ProjectExplorer", "Version" : "3.6.1" }
+    ]
+}
+
