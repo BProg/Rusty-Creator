@@ -2,6 +2,7 @@
 #include <projectexplorer/buildenvironmentwidget.h>
 
 #include <projectexplorer/buildconfiguration.h>
+#include "rustbuildenvironmentwidget.h"
 
 BuildConfiguration::BuildType RustBuildConfiguration::buildType() const
 {
@@ -15,5 +16,6 @@ RustBuildConfiguration::RustBuildConfiguration(Target *target, Core::Id id) : Bu
 
 NamedWidget *RustBuildConfiguration::createConfigWidget()
 {
-    return new BuildEnvironmentWidget(this);
+    return new RustBuildEnvironmentWidget();
 }
+

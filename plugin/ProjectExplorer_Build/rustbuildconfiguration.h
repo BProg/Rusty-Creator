@@ -12,6 +12,7 @@ public:
     BuildType buildType() const override;
     RustBuildConfiguration(Target *target, Core::Id id);
     NamedWidget *createConfigWidget() override;
+
 };
 
 #endif // RUSTBUILDCONFIGURATION_H

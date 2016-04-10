@@ -15,7 +15,8 @@ SOURCES += rustplugin.cpp \
     rustruncontrol.cpp \
     rustrunconfiguration.cpp \
     ProjectExplorer_Build/rustbuildconfiguration.cpp \
-    ProjectExplorer_Build/rustbuildconfigurationfactory.cpp
+    ProjectExplorer_Build/rustbuildconfigurationfactory.cpp \
+    ProjectExplorer_Build/rustbuildenvironmentwidget.cpp
 
 HEADERS += rustplugin.h \
         rust_global.h \
@@ -32,7 +33,8 @@ HEADERS += rustplugin.h \
     rustruncontrol.h \
     rustrunconfiguration.h \
     ProjectExplorer_Build/rustbuildconfiguration.h \
-    ProjectExplorer_Build/rustbuildconfigurationfactory.h
+    ProjectExplorer_Build/rustbuildconfigurationfactory.h \
+    ProjectExplorer_Build/rustbuildenvironmentwidget.h
 
 # Qt Creator linking
 

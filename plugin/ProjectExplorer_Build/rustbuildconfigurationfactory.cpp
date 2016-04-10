@@ -15,8 +15,12 @@ int RustBuildConfigurationFactory::priority(const Target *parent) const
 QList<BuildInfo *> RustBuildConfigurationFactory::availableBuilds(const Target *parent) const
 {
     QList<BuildInfo*> builds;
-    builds.append(new BuildInfo(this));
-    return QList<BuildInfo*>();
+    BuildInfo *debugBuild = new BuildInfo(this);
+    debugBuild->buildType = BuildConfiguration::BuildType::Debug;
+    debugBuild->displayName = QString::fromLatin1("Debug");
+    debugBuild->typeName = QString::fromLatin1("Rust Debug");
+    builds << debugBuild;
+    return builds;
 }
 
 int RustBuildConfigurationFactory::priority(const Kit *k, const QString &projectPath) const
@@ -26,7 +30,13 @@ int RustBuildConfigurationFactory::priority(const Kit *k, const QString &project
 
 QList<BuildInfo *> RustBuildConfigurationFactory::availableSetups(const Kit *k, const QString &projectPath) const
 {
-    return QList<BuildInfo*>();
+    QList<BuildInfo*> builds;
+    BuildInfo *debugBuild = new BuildInfo(this);
+    debugBuild->buildType = BuildConfiguration::BuildType::Debug;
+    debugBuild->displayName = QString::fromLatin1("Debug");
+    debugBuild->typeName = QString::fromLatin1("Rust Debug");
+    builds << debugBuild;
+    return builds;
 }
 
 BuildConfiguration *RustBuildConfigurationFactory::create(Target *parent, const BuildInfo *info) const
@@ -36,12 +46,15 @@ BuildConfiguration *RustBuildConfigurationFactory::create(Target *parent, const 
 
 bool RustBuildConfigurationFactory::canRestore(const Target *parent, const QVariantMap &map) const
 {
+    Q_UNUSED(parent);
+    Q_UNUSED(map);
     return false;
 }
 
 BuildConfiguration *RustBuildConfigurationFactory::restore(Target *parent, const QVariantMap &map)
 {
-    return nullptr;
+    Q_UNUSED(parent);
+    Q_UNUSED(map);
 }
 
 bool RustBuildConfigurationFactory::canClone(const Target *parent, BuildConfiguration *product) const
