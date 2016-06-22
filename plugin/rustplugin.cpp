@@ -2,12 +2,15 @@
 #include "rustconstants.h"
 
 #include <QtPlugin>
+#include <projectexplorer/kitmanager.h>
 
 #include <utils/mimetypes/mimedatabase.h>
 
 #include "cargoprojectmanager.h"
 #include "rusttoolchainfactory.h"
 #include "ProjectExplorer_Build/rustbuildconfigurationfactory.h"
+#include "ProjectExplorer_Kit/rustkitchooser.h"
+#include "extensionsystem/pluginmanager.h"
 
 using namespace Rust;
 

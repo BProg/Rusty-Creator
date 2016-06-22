@@ -50,7 +50,7 @@
                          <object>{1df30b4f-0979-4793-ad40-b16c845c7171}</object>
                          <name>CargoProject</name>
                          <pos>x:560;y:300</pos>
-                         <rect>x:-45;y:-30;w:90;h:60</rect>
+                         <rect>x:-40;y:-30;w:80;h:60</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -71,7 +71,7 @@
                          <object>{73c9ad01-d868-474b-8f29-add149553f14}</object>
                          <name>CargoProjectManager</name>
                          <pos>x:340;y:300</pos>
-                         <rect>x:-65;y:-30;w:130;h:60</rect>
+                         <rect>x:-60;y:-30;w:120;h:60</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -94,16 +94,6 @@
                          <b>{1eb08c36-931f-4b9a-94f0-e7efe0a2ca97}</b>
                         </DRelation>
                        </base-DRelation>
-                       <a>
-                        <DAssociationEnd>
-                         <kind>1</kind>
-                        </DAssociationEnd>
-                       </a>
-                       <b>
-                        <DAssociationEnd>
-                         <kind>2</kind>
-                        </DAssociationEnd>
-                       </b>
                       </DAssociation>
                      </instance>
                     </item>
@@ -192,7 +182,7 @@
                          <object>{021b5576-84d9-4a6a-9d8f-a44baa91a41b}</object>
                          <name>RustToolChainFactory</name>
                          <pos>x:320;y:635</pos>
-                         <rect>x:-70;y:-30;w:140;h:60</rect>
+                         <rect>x:-60;y:-30;w:120;h:60</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -237,7 +227,7 @@
                          <object>{79c5e445-bd33-468f-97f7-17cbf189b98f}</object>
                          <name>CargoProjectNode</name>
                          <pos>x:750;y:195</pos>
-                         <rect>x:-55;y:-30;w:110;h:60</rect>
+                         <rect>x:-50;y:-30;w:100;h:60</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -282,7 +272,7 @@
                          <object>{89ac66fa-f548-4e28-8771-cee0e8c7740d}</object>
                          <name>CargoProjectFile</name>
                          <pos>x:745;y:350</pos>
-                         <rect>x:-50;y:-30;w:100;h:60</rect>
+                         <rect>x:-45;y:-30;w:90;h:60</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -353,7 +343,7 @@
                          <object>{aa4b4d48-4b93-4fc0-a346-4a4772c25acc}</object>
                          <name>RustToolChain</name>
                          <pos>x:490;y:630</pos>
-                         <rect>x:-45;y:-30;w:90;h:60</rect>
+                         <rect>x:-40;y:-30;w:80;h:60</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -398,7 +388,7 @@
                          <object>{f68642a0-5b83-43c5-aba9-e65f27c43914}</object>
                          <name>RustOutputParser</name>
                          <pos>x:670;y:590</pos>
-                         <rect>x:-55;y:-30;w:110;h:60</rect>
+                         <rect>x:-50;y:-30;w:100;h:60</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -880,7 +870,7 @@
                          <object>{69a18ae0-b5bb-4a8f-b529-e490dc530f35}</object>
                          <name>ToolAutoFinder</name>
                          <pos>x:855;y:770</pos>
-                         <rect>x:-50;y:-30;w:100;h:60</rect>
+                         <rect>x:-45;y:-30;w:90;h:60</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -911,9 +901,242 @@
                       </DAssociation>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{f3219098-666a-40f4-b391-a5c28a0d8c04}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{de783d54-9d74-42cf-a028-72655ebdfe76}</object>
+                         <stereotypes>
+                          <qlist>
+                           <item>interface</item>
+                          </qlist>
+                         </stereotypes>
+                         <name>IBuildConfigurationFactory</name>
+                         <pos>x:265;y:940</pos>
+                         <rect>x:-20;y:-20;w:40;h:40</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>ProjectExplorer</namespace>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{0394e8d3-1e43-4abb-b6ac-14506d36cee0}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{679d33ec-37a5-401d-b4c5-d5d154d3c875}</object>
+                         <name>RustBuildConfigurationFactory</name>
+                         <pos>x:265;y:1035</pos>
+                         <rect>x:-80;y:-30;w:160;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>Rust</namespace>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DInheritance">
+                      <DInheritance>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{894ec543-2622-45f3-8389-b4cb177dc453}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{d16bff7f-6663-464b-85b4-da2f09911229}</object>
+                         <a>{0394e8d3-1e43-4abb-b6ac-14506d36cee0}</a>
+                         <b>{f3219098-666a-40f4-b391-a5c28a0d8c04}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DInheritance>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{cde51670-a608-485d-8ac2-1bfd15f87d55}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{135cc3a5-72ef-48ce-a560-01eaa4dac316}</object>
+                         <name>BuildConfiguration</name>
+                         <pos>x:500;y:940</pos>
+                         <rect>x:-50;y:-30;w:100;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>ProjectExplorer</namespace>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{4803fbea-fa0c-4826-a664-51cc54d04d74}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{2a56d1fa-65de-46b6-94af-468ae7b3d488}</object>
+                         <name>RustBuildConfiguration</name>
+                         <pos>x:500;y:1040</pos>
+                         <rect>x:-60;y:-30;w:120;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>Rust</namespace>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DInheritance">
+                      <DInheritance>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{f662ae87-fe0f-45b1-bf32-0075fb3e668c}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{a661174e-926f-4c58-a3aa-9da8cc2b9742}</object>
+                         <a>{4803fbea-fa0c-4826-a664-51cc54d04d74}</a>
+                         <b>{cde51670-a608-485d-8ac2-1bfd15f87d55}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DInheritance>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{919ed66c-cd02-4cfa-b5b6-40b8ca5bcfeb}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{cde1906a-7eb7-41db-a5f3-0cae41450470}</object>
+                         <a>{0394e8d3-1e43-4abb-b6ac-14506d36cee0}</a>
+                         <b>{cde51670-a608-485d-8ac2-1bfd15f87d55}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{2605eac9-f109-4d5e-9645-b3b22e7050e1}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{bb5ded97-65cc-41dc-8b8a-7c84fdc5e7c8}</object>
+                         <name>NamedWidget</name>
+                         <pos>x:725;y:945</pos>
+                         <rect>x:-40;y:-30;w:80;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>ProjectExplorer</namespace>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{8277e35f-9720-4059-9bb8-72f7e6034759}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b36d8c35-1a3a-4bb3-a564-c132dad322fb}</object>
+                         <name>RustBuildEnvironmentWidget</name>
+                         <pos>x:725;y:1045</pos>
+                         <rect>x:-75;y:-30;w:150;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>Rust</namespace>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DInheritance">
+                      <DInheritance>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{358002bb-b37c-46e6-96b2-019b2c85f037}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{8c41a143-6c20-4869-a916-534c4ff44669}</object>
+                         <a>{8277e35f-9720-4059-9bb8-72f7e6034759}</a>
+                         <b>{2605eac9-f109-4d5e-9645-b3b22e7050e1}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DInheritance>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{740a0629-e17e-4460-9e7d-3cc4a9564634}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{99e2473a-3e3b-4256-9451-61d5ad95b24b}</object>
+                         <a>{4803fbea-fa0c-4826-a664-51cc54d04d74}</a>
+                         <b>{2605eac9-f109-4d5e-9645-b3b22e7050e1}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1459365563956</last-modified>
+                  <last-modified>1464549286643</last-modified>
                  </MDiagram>
                 </base-MDiagram>
                </MCanvasDiagram>
@@ -956,16 +1179,6 @@
                              <b>{73c9ad01-d868-474b-8f29-add149553f14}</b>
                             </MRelation>
                            </base-MRelation>
-                           <a>
-                            <MAssociationEnd>
-                             <kind>1</kind>
-                            </MAssociationEnd>
-                           </a>
-                           <b>
-                            <MAssociationEnd>
-                             <kind>2</kind>
-                            </MAssociationEnd>
-                           </b>
                           </MAssociation>
                          </instance>
                         </target>
@@ -1957,6 +2170,289 @@
                   <name>ToolAutoFinder</name>
                  </MObject>
                 </base-MObject>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{de783d54-9d74-42cf-a028-72655ebdfe76}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{de783d54-9d74-42cf-a028-72655ebdfe76}</uid>
+                    <stereotypes>
+                     <qlist>
+                      <item>interface</item>
+                     </qlist>
+                    </stereotypes>
+                   </MElement>
+                  </base-MElement>
+                  <name>IBuildConfigurationFactory</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>ProjectExplorer</namespace>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{679d33ec-37a5-401d-b4c5-d5d154d3c875}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{679d33ec-37a5-401d-b4c5-d5d154d3c875}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>RustBuildConfigurationFactory</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{d16bff7f-6663-464b-85b4-da2f09911229}</uid>
+                        <target>
+                         <instance type="MInheritance">
+                          <MInheritance>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{d16bff7f-6663-464b-85b4-da2f09911229}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{679d33ec-37a5-401d-b4c5-d5d154d3c875}</a>
+                             <b>{de783d54-9d74-42cf-a028-72655ebdfe76}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MInheritance>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{cde1906a-7eb7-41db-a5f3-0cae41450470}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{cde1906a-7eb7-41db-a5f3-0cae41450470}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{679d33ec-37a5-401d-b4c5-d5d154d3c875}</a>
+                             <b>{135cc3a5-72ef-48ce-a560-01eaa4dac316}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <namespace>Rust</namespace>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{135cc3a5-72ef-48ce-a560-01eaa4dac316}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{135cc3a5-72ef-48ce-a560-01eaa4dac316}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>BuildConfiguration</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>ProjectExplorer</namespace>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{2a56d1fa-65de-46b6-94af-468ae7b3d488}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{2a56d1fa-65de-46b6-94af-468ae7b3d488}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>RustBuildConfiguration</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{a661174e-926f-4c58-a3aa-9da8cc2b9742}</uid>
+                        <target>
+                         <instance type="MInheritance">
+                          <MInheritance>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{a661174e-926f-4c58-a3aa-9da8cc2b9742}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{2a56d1fa-65de-46b6-94af-468ae7b3d488}</a>
+                             <b>{135cc3a5-72ef-48ce-a560-01eaa4dac316}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MInheritance>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{99e2473a-3e3b-4256-9451-61d5ad95b24b}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{99e2473a-3e3b-4256-9451-61d5ad95b24b}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{2a56d1fa-65de-46b6-94af-468ae7b3d488}</a>
+                             <b>{bb5ded97-65cc-41dc-8b8a-7c84fdc5e7c8}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <namespace>Rust</namespace>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{bb5ded97-65cc-41dc-8b8a-7c84fdc5e7c8}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{bb5ded97-65cc-41dc-8b8a-7c84fdc5e7c8}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>NamedWidget</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>ProjectExplorer</namespace>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{b36d8c35-1a3a-4bb3-a564-c132dad322fb}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{b36d8c35-1a3a-4bb3-a564-c132dad322fb}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>RustBuildEnvironmentWidget</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{8c41a143-6c20-4869-a916-534c4ff44669}</uid>
+                        <target>
+                         <instance type="MInheritance">
+                          <MInheritance>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{8c41a143-6c20-4869-a916-534c4ff44669}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b36d8c35-1a3a-4bb3-a564-c132dad322fb}</a>
+                             <b>{bb5ded97-65cc-41dc-8b8a-7c84fdc5e7c8}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MInheritance>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <namespace>Rust</namespace>
                </MClass>
               </instance>
              </target>
