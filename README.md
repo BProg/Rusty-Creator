@@ -75,7 +75,7 @@ sudo zypper install -t pattern devel_basis
 
 2) Download and install [QT Community](http://www.qt.io/download/). *At this moment 5.5 version is needed*
 
-3) Clone this project
+3) `git clone --recursive git@github.com:BProg/Rusty-Creator.git`
 
 4) Go to Rusty-Creator subdirectory (QT recomends to create shadow builds)
 
@@ -101,7 +101,7 @@ xcode-select --install
 ```
 2) Download and install [QT Community](http://www.qt.io/download/). *At this moment 5.5 version is needed*
 
-3) Clone this project
+3) `git clone --recursive git@github.com:BProg/Rusty-Creator.git`
 
 4) Go to Rusty-Creator subdirectory (QT recomends to create shadow builds)
 
